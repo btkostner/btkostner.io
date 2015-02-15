@@ -1,0 +1,17 @@
+########################
+# misc / editors
+########################
+*~
+*#
+.DS_STORE
+.netbeans
+nbproject
+.idea
+.sublime-workspace
+
+
+########################
+# html and css files
+########################
+.html
+.css
