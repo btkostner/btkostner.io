@@ -13,8 +13,7 @@ This is the webpage of Blake Kostner
 ## Quick Start
 
 This is currently a basic site, just html (in the form of jade) and css
-(in the form of stylus css). No compiled html or css is uploaded, so you will
-need to compile first.
+(in the form of stylus css).
 
 Dependencies:
 ```
