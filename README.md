@@ -1,3 +1,4 @@
-# btkostner
+# [btkostner.io](http://btkostner.io)
+## Home of Blake Kostner
 
-a [Sails](http://sailsjs.org) application
+Personal homepage of Blake Kostner.
