@@ -3,6 +3,7 @@ module.exports = function (grunt) {
 		'clean:dev',
 		'jst:dev',
 		'stylus:dev',
+		'autoprefixer:dev',
 		'copy:dev',
 		'coffee:dev'
 	]);

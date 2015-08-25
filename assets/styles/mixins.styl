@@ -1,0 +1,109 @@
+//============================
+// mixins.styl
+//============================
+
+//==================
+// colors
+// iterates over all colors in $colors object
+//==================
+
+colors()
+  if length(arguments) != 2 // make sure we have a selector and attribues
+    error("see colors() mixin for usage") // else we throw a compiling error
+
+  for name, color in $colors // for every color in $colors
+    // create a cool class selector based on the color name and the first argument
+    class = "[class*='%s']" % (unquote(name) + " " + arguments[0]) // add a space between
+    nprops = clone(arguments[1]) // create a new object
+    for key, value in nprops // each attribute from the mixin
+      // TODO: maybe replace if with a find, to allow mixins?
+      if value == c // if the value is c
+        nprops[key] = color // then we replace it with the actual color
+
+    // actually output the code we generated
+    &{class}
+      {nprops}
+      {block}
+
+// give it a selector and some attributes to change
+
+// h1
+//   colors("colored", {
+//     color: c
+//   })
+
+// and it will output something like this
+
+// h1[class*='blue colored'] {
+//     color: #268bd2;
+// }
+
+//==================
+// grid
+// creates awesome classes like "two thirds" from $grid["denominnator"] and $grid["numerator"]
+//==================
+
+grid(size = "")
+  if size != "" // avoid extra spaces in selectors ("half  width")
+    size = " " + size // because adding a space is too much work....
+
+  visible = s(".cell[class*=%s]", 'visible' + size)
+
+  .grid:not(.vertical) > {visible}
+    height auto
+
+  .grid.vertical > {visible}
+    width auto
+
+  hidden = s(".cell[class*=%s]", 'hidden' + size)
+
+  .grid:not(.vertical) > {hidden}
+    height 0
+
+  .grid.vertical > {hidden}
+    width 0
+
+  for p, i in $grid["position"]
+
+    position = s(".cell[class*='%s']", p + size + " position")
+
+    {position}
+      order i + 1
+
+  for dn, dk in $grid["denominator"]
+
+    dk = dk + 1 // avoid dividing by zero. DO NOT REMOVE
+    selector = s(".cell[class*='%s']", dn + size + " width")
+
+    {selector} // .cell[class*="third width"]
+      width (100 / dk)%
+
+    for nn, nk in $grid["numerator"]
+      if nk != 0 // skip one in the numberator (one third)
+        if nk < dk // skip greator than whole numbers (four halfs)
+          if nk != dk - 1 // skip wholes (three thirds)
+
+            nk = nk + 1 // avoid dividing by zero. DO NOT REMOVE
+            selector = s(".cell[class*='%s']",  nn + " " + dn + "s" + size + " width")
+
+            {selector} // .cell[class*="two thirds width"]
+              width (nk / dk) * 100%
+
+// give it some unique class names
+
+// h1
+//   grid("width")
+
+// and it will output a bunch of classes like such
+
+// .cell[class*='quarters width'] {
+//     width: 25%
+// }
+
+// .cell[class*='two quarters width'] {
+//     width: 50%
+// }
+
+// .cell[class*='three quarters width'] {
+//     width: 75%
+// }

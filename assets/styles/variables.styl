@@ -1,0 +1,60 @@
+//============================
+// variables.styl
+//============================
+
+//==================
+// tones
+//==================
+
+$tone                        = {}
+
+$tone["dark"]                = #333
+$tone["medium"]              = #979797
+$tone["light"]               = #fafafa
+
+//==================
+// colors
+//==================
+
+$colors                      = {}
+
+$colors["blue"]              = #268bd2
+$colors["gray"]              = #95A5AC
+$colors["orange"]            = #cb4b16
+$colors["pink"]              = #d33682
+$colors["red"]               = #dc322f
+$colors["teal"]              = #2aa198
+$colors["yellow"]            = #edac35
+
+//==================
+// typography
+//==================
+
+$type                        = {}
+
+$type["font"]                = Roboto, "Open Sans", "Droid Sans", "Arial", "Helvetica", sans-serif;
+
+$type["link"]                = $colors["blue"]
+
+//==================
+// grid
+// https://github.com/jenius/rupture
+//==================
+
+$grid                        = {}
+
+// used more for markup names and stuff
+rupture.scale =        0      500px     800px     1200px
+//                     └───┬───┘ └───┬───┘ └───┬───┘|└───┬───
+rupture.scale-names =   'small'   'medium'  'large'   'jumbo'
+//                                             grid | max-width
+
+// is there a need to go more? just nest the grids ;)
+// for use in a more "english" grid
+$grid["position"]            = first second third fourth fifth
+$grid["denominator"]         = whole half third quarter fifth
+$grid["numerator"]           = one two three four five
+
+// used for spacing of basicly everything
+$grid["vertical"]            = 1.25rem
+$grid["horizontal"]          = 1.25rem

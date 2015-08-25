@@ -1,0 +1,115 @@
+//============================
+// element/type.styl
+//============================
+
+//==================
+// text
+//==================
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p
+  margin: $grid["vertical"] 0
+
+h1
+  font-size 4.5rem
+  line-height 6.063rem
+  font-weight 100
+
+h2
+  font-size 2rem
+  line-height 2.813rem
+  font-weight 100
+
+h3
+  font-size 1.5rem
+  line-height 2.188rem
+  font-weight 700
+
+h4
+  font-size 1.125rem
+  line-height 1.688rem
+  font-weight 300
+
+h5
+  font-size 1rem
+  line-height 1.5rem
+  font-weight 500
+
+h6
+  font-size 0.75rem
+  line-height 1.188rem
+
+p
+  font-size 1rem
+  line-height 1.5rem
+
+//==================
+// links
+//==================
+
+// base class for links
+a
+  text-decoration none
+  transition color .2s ease
+
+// same as above but don't set it if its a waldo link or vanilla
+a:not(.waldo):not(.vanilla):not(.button)
+  color: $type["link"]
+  colors("colored", {
+    color: c
+  })
+
+a.waldo
+  color inherit
+
+  &:hover
+    color: $type["link"]
+    colors("colored", {
+      color: c
+    })
+
+a.vanilla,
+a.button
+  color inherit
+
+  &:hover
+    color inherit
+
+//==================
+// weight classes
+//==================
+
+strong
+  font-weight 700
+
+//==================
+// size classes
+//==================
+
+[class*="small text"]
+  font-size 75%
+
+//==================
+// color classes
+//==================
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+p
+  colors("colored", {
+    color: c
+  })
+
+.inverted
+  color: $tone["light"]
+  text-shadow 0 1px 1px rgba(0, 0, 0, 0.3)

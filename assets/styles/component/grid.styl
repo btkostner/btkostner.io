@@ -1,0 +1,57 @@
+//============================
+// component/grid.styl
+//============================
+
+//==================
+// cells
+//==================
+
+.cell
+  flex 1 1 auto // take up as much space as possible
+  padding 0 10px
+  // min width set to smallest possible cell width
+  min-width: (1 / (length($grid["denominator"]) + 1)) * 100%
+  overflow hidden
+
+// TODO: add breakpoint changes?
+[class*="top aligned cell"] // is there a use case for this?
+  align-self flex-start
+
+[class*="center aligned cell"]
+  align-self center
+
+[class*="bottom aligned cell"]
+  align-self flex-end
+
+grid() // creates all the cool "three quarters" classes
+
+for n, k in rupture.scale-names // use the scale names in variables file
+  if k != 0 // skip the small size to avoid "half small width" classes
+    +above(n) // above "medium width"
+      grid(unquote(n)) // generate grids like "two thirds medium width"
+
+//==================
+// grid setup
+//==================
+
+.grid
+  display flex
+  flex 1 1 auto
+  flex-wrap wrap
+  justify-content center
+
+// use horizontal settings for .grid unless it's a vertical grid.
+.grid:not(.vertical)
+  align-content stretch
+  align-items stretch
+  flex-direction row
+
+[class*="vertical grid"]
+  flex-direction column
+
+//==================
+// simple nesting
+//==================
+
+.grid.cell
+  padding 0

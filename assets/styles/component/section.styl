@@ -1,0 +1,26 @@
+//============================
+// section.styl
+//============================
+
+.section
+  background-size cover
+  background-repeat no-repeat
+  background-position 50% 50%
+
+.section:not(.full)
+  margin auto
+  max-width: last(rupture.scale)
+
+.padded.section
+  padding: ($grid["vertical"] * 6) 0
+
+.page.section
+  min-height 100vh
+  display flex
+  align-items center
+
+.full.section
+  margin-left 50%
+  transform translateX(-50%)
+  width 100vw
+  padding 0 8px // wait for FIXME: some padding to deal with stupid 100vw scrollbar bug
