@@ -13,7 +13,7 @@
           rel="noopener noreferrer"
           target="_blank"
         >
-          <font-awesome-icon :icon="['fab', 'github']" />
+          <font-awesome-icon :icon="['fab', 'github']" size="lg" />
         </a>
 
         <a

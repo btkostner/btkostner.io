@@ -25,6 +25,10 @@ export default {
     fallback: true
   },
 
+  css: [
+    '~/assets/styles/override.css'
+  ],
+
   buildModules: [
     '@nuxt/typescript-build',
     '@nuxtjs/tailwindcss'
