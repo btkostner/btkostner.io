@@ -17,6 +17,16 @@
         </a>
 
         <a
+          aria-label="Steam"
+          class="mx-4 text-gray-700 hover:text-red-600"
+          href="https://steamcommunity.com/id/mkrar/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <font-awesome-icon :icon="['fab', 'steam']" />
+        </a>
+
+        <a
           aria-label="Twitter"
           class="mx-4 text-gray-700 hover:text-red-600"
           href="https://twitter.com/nerdy_btkostner"
