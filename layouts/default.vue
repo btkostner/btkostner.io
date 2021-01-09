@@ -21,6 +21,7 @@
 
         <div class="flex -mx-2 mt-4 mb-2 md:mt-0 md:mb-0">
           <a
+            aria-label="GitHub"
             class="mx-2 text-gray-500 hover:text-red-600"
             href="https://github.com/btkostner"
             rel="noopener noreferrer"
@@ -30,6 +31,7 @@
           </a>
 
           <a
+            aria-label="Twitter"
             class="mx-2 text-gray-500 hover:text-red-600"
             href="https://twitter.com/nerdy_btkostner"
             rel="noopener noreferrer"
@@ -39,6 +41,7 @@
           </a>
 
           <a
+            aria-label="LinkedIn"
             class="mx-2 text-gray-500 hover:text-red-600"
             href="https://www.linkedin.com/in/btkostner/"
             rel="noopener noreferrer"
