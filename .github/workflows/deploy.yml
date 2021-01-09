@@ -7,6 +7,9 @@ on:
     branches:
       - main
 
+env:
+  FONTAWESOME_NPM_AUTH_TOKEN: ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}
+
 jobs:
   GitHub_Pages:
     name: GitHub Pages
@@ -28,8 +31,6 @@ jobs:
 
       - name: Install (Npm)
         run: npm ci
-        env:
-          FONTAWESOME_NPM_AUTH_TOKEN: ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}
 
       - name: Build
         run: npm run build
