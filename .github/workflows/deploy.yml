@@ -1,0 +1,39 @@
+---
+
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  GitHub_Pages:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Cancel
+        uses: styfle/cancel-workflow-action@0.6.0
+        with:
+          access_token: ${{ github.token }}
+
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup (Node)
+        uses: actions/setup-node@v2
+        with:
+          node-version: '12'
+
+      - name: Install (Npm)
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          cname: btkostner.io
