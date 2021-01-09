@@ -18,6 +18,10 @@ export default {
     ]
   },
 
+  generate: {
+    fallback: true
+  },
+
   buildModules: [
     '@nuxt/typescript-build',
     '@nuxtjs/tailwindcss'
