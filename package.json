@@ -1,0 +1,27 @@
+{
+  "name": "btkostner.io",
+  "description": "Personal Website",
+  "version": "4.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nuxt-ts",
+    "build": "nuxt-ts generate"
+  },
+  "dependencies": {
+    "@nuxt/content": "^1.9.0",
+    "@nuxt/typescript-runtime": "^2.0.0",
+    "core-js": "^3.6.5",
+    "nuxt": "^2.14.6"
+  },
+  "devDependencies": {
+    "@fortawesome/fontawesome-pro": "^5.15.1",
+    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-brands-svg-icons": "^5.15.1",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/vue-fontawesome": "^2.0.2",
+    "@nuxt/types": "^2.14.6",
+    "@nuxt/typescript-build": "^2.0.3",
+    "@nuxtjs/tailwindcss": "^3.1.0",
+    "@tailwindcss/typography": "^0.3.1"
+  }
+}
