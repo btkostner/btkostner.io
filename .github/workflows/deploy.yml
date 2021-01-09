@@ -9,6 +9,7 @@ on:
 
 jobs:
   GitHub_Pages:
+    name: GitHub Pages
     runs-on: ubuntu-latest
 
     steps:
@@ -27,6 +28,8 @@ jobs:
 
       - name: Install (Npm)
         run: npm ci
+        env:
+          FONTAWESOME_NPM_AUTH_TOKEN: ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}
 
       - name: Build
         run: npm run build
