@@ -5,7 +5,7 @@
     </h1>
 
     <div class="flex flex-col justify-between items-center text-2xl">
-      <div class="flex -mx-4 mt-4 mb-2">
+      <div class="flex -mx-4 mt-6 mb-2">
         <a
           aria-label="GitHub"
           class="mx-4 text-gray-700 hover:text-red-600"
@@ -47,13 +47,17 @@
         </a>
       </div>
     </div>
+
+    <div class="mt-6 text-center underline">
+      <nuxt-link to="/blog">
+        blog
+      </nuxt-link>
+    </div>
   </main>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-
-export default Vue.extend({
+<script>
+export default {
   layout: 'centered'
-})
+}
 </script>

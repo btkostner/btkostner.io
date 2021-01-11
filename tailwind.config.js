@@ -1,13 +1,26 @@
-import aspectRatio from '@tailwindcss/aspect-ratio'
-import typography from '@tailwindcss/typography'
+const colors = require('tailwindcss/colors')
 
-export default {
+module.exports = {
   plugins: [
-    aspectRatio,
-    typography
+    require('@tailwindcss/aspect-ratio'),
+    require('@tailwindcss/typography')
   ],
 
-  purgeCSS: {
-    whitelistPatterns: [/svg.*/, /fa.*/]
+  purge: {
+    options: {
+      safelist: [/svg.*/, /fa.*/]
+    }
+  },
+
+  theme: {
+    colors: {
+      transparent: 'transparent',
+      current: 'currentColor',
+      black: colors.black,
+      white: colors.white,
+      gray: colors.trueGray,
+      red: colors.red,
+      orange: colors.orange,
+    }
   }
 }

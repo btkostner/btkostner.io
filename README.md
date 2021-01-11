@@ -6,7 +6,7 @@
 </div>
 
 <p align="center">
-  <img src="https://github.com/btkostner/btkostner.io/workflows/Publish/badge.svg" alt="Publish">
+  <img src="https://github.com/btkostner/btkostner.io/workflows/Deploy/badge.svg" alt="Deploy">
 </p>
 
 ---

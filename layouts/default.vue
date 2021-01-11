@@ -1,10 +1,10 @@
 <template>
   <div class="min-h-screen flex flex-col">
     <div class="flex-grow">
-      <Nuxt />
+      <Nuxt class="container mx-auto" />
     </div>
 
-    <footer class="flex-none px-6 py-2 border-t-2 border-red-100">
+    <footer class="flex-none px-6 py-2 border-t-2 border-gray-100 hover-target">
       <div class="flex flex-col justify-between items-center container mx-auto md:flex-row">
         <div>
           <nuxt-link
@@ -16,7 +16,8 @@
           <span class="text-gray-600">
             Made in Colorado with
           </span>
-          <font-awesome-icon icon="heart" class="text-gray-500" />
+          <font-awesome-icon icon="heart" class="hover-target-off text-gray-400" />
+          <font-awesome-icon icon="cannabis" class="hover-target-on text-gray-400" />
         </div>
 
         <div class="flex -mx-2 mt-4 mb-2 md:mt-0 md:mb-0">
@@ -64,3 +65,13 @@
     </footer>
   </div>
 </template>
+
+<style scoped>
+  .hover-target:hover .hover-target-off {
+    display: none;
+  }
+
+  .hover-target:not(:hover) .hover-target-on {
+    display: none;
+  }
+</style>

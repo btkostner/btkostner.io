@@ -1,20 +1,15 @@
 <template>
   <main class="p-4 max-w-xl">
     <h1 class="text-2xl">
-      {{ statusCode }}
+      {{ error.statusCode }}
     </h1>
 
     <h2 class="text-5xl">
-      <template v-if="statusCode === 404">
-        Page Not Found
-      </template>
-      <template v-else>
-        Bad News
-      </template>
+      {{ error.message }}
     </h2>
 
     <p class="mt-8">
-      <template v-if="statusCode !== 404">
+      <template v-if="error.statusCode === 404">
         The page you are looking for doesn't actually exist. It might have been
         taken to another castle. It might be held captive in a picture. It could
         have even been nuked from orbit by the Cylons. We're not really sure
@@ -38,12 +33,6 @@ export default {
     error: {
       type: Object,
       default: () => ({})
-    }
-  },
-
-  computed: {
-    statusCode () {
-      return this.error.statusCode || 404
     }
   }
 }
