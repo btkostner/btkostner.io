@@ -3,6 +3,10 @@ export default {
 
   components: true,
 
+  build: {
+    publicPath: '/public/'
+  },
+
   head: {
     title: 'btkostner.io',
 
@@ -25,6 +29,12 @@ export default {
     fallback: true
   },
 
+  messages: {
+    loading: 'Loading',
+    error_404: 'Page Not Found',
+    server_error: 'Server Error'
+  },
+
   css: [
     '~/assets/styles/override.css'
   ],
@@ -34,7 +44,9 @@ export default {
   ],
 
   modules: [
-    '@nuxt/content'
+    '~/modules/social-images',
+
+    '@nuxt/content',
   ],
 
   plugins: [

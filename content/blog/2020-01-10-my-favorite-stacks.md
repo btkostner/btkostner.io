@@ -1,7 +1,7 @@
 ---
 
 title: My favorite tech stacks
-image: /
+published: false
 description: |
   After poking around a lot of different tech stacks, I've come to find my
   perfect stack.

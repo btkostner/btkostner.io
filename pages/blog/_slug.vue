@@ -18,8 +18,17 @@
 
 <script>
 export default {
-  head: {
-    title: 'Blog'
+  head () {
+    return {
+      title: this.post.title.trim(),
+
+      meta: [
+        { hid: 'twitter:title', name: 'twitter:title', content: this.post.title.trim() },
+        { hid: 'twitter:description', name: 'twitter:description', content: this.post.description.trim() },
+        { hid: 'twitter:image', name: 'twitter:image', content: `https://btkostner.io/public/social/${this.post.slug}-twitter.png` },
+        { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' }
+      ]
+    }
   },
 
   asyncData: async ({ $content, error, params }) => ({

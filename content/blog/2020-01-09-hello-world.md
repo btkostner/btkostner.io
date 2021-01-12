@@ -1,17 +1,16 @@
 ---
 
-title: Hello world!
+title: hello world!
 image: /
 published: true
-description: |
+tags:
+  - nuxt
+  - small-talk
+  - web-dev
+description: >
   I'm starting a new personal site that includes a blog! I'm not a great writer,
   but hopefully my thoughts will be helpful, if not a little entertaining. This
   goes over a bit of what the backend.
-
-tags:
-  - Nuxt
-  - small-talk
-  - web-dev
 
 ---
 
