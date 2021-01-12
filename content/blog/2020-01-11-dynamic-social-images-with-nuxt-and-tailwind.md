@@ -1,7 +1,10 @@
 ---
 
 title: dynamic social images with Nuxt and Tailwind
+
 published: false
+createdAt: 2021-01-10T08:00:00.730Z
+
 description: |
   Create dynamic social media previews with a stack you are already using! Nuxt
   static generation and Tailwind CSS!
