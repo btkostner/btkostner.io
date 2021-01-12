@@ -10,7 +10,7 @@ const SERVE_PATH = '/public/social'
 let browser = null
 let port = 0
 
-export default function generateSocialImages () {
+export default function socialImages () {
   const blogPosts = []
 
   this.nuxt.hook('content:file:beforeInsert', async (doc) => {

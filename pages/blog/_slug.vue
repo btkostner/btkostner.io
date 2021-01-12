@@ -20,13 +20,15 @@
 export default {
   head () {
     return {
-      title: this.post.title.trim(),
+      title: this.post.title,
 
       meta: [
-        { hid: 'twitter:title', name: 'twitter:title', content: this.post.title.trim() },
-        { hid: 'twitter:description', name: 'twitter:description', content: this.post.description.trim() },
+        { hid: 'description', name: 'description', content: this.post.description },
+
+        { hid: 'twitter:title', name: 'twitter:title', content: this.post.title },
+        { hid: 'twitter:description', name: 'twitter:description', content: this.post.description },
         { hid: 'twitter:image', name: 'twitter:image', content: `https://btkostner.io/public/social/${this.post.slug}-twitter.png` },
-        { hid: 'twitter:image:alt', name: 'twitter:image:alt', content: this.post.title.trim() },
+        { hid: 'twitter:image:alt', name: 'twitter:image:alt', content: this.post.title },
         { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' },
         { hid: 'twitter:site', name: 'twitter:site', content: '@nerdy_btkostner' }
       ]
