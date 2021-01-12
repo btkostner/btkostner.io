@@ -1,6 +1,6 @@
 /**
  * This file renders a very simple HTML page that will get screenshotted to
- * form the Twitter social card.
+ * form the social media cards.
  */
 
 <template>
@@ -9,15 +9,12 @@
       :class="`ring-4 ring-offset-2 ring-black rounded flex items-center ${service}`"
       id="image"
     >
-      <div class="m-14">
-        <h1 class="text-8xl">
+      <div class="m-8">
+        <h1 class="text-6xl">
           {{ post.title }}
         </h1>
 
-        <h2
-          v-if="true"
-          class="mt-6 text-5xl"
-        >
+        <h2 class="mt-6 text-3xl">
           by Blake Kostner
         </h2>
       </div>
@@ -27,8 +24,8 @@
 
 <style scoped>
   .twitter#image {
-    height: 628px;
-    width: 1200px;
+    height: 335px;
+    width: 600px;
   }
 </style>
 

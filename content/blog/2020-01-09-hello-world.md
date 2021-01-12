@@ -5,7 +5,7 @@ title: hello world!
 published: true
 createdAt: 2021-01-09T08:00:00.730Z
 
-twitterImage: /_public/social/twitter
+twitterImage: /_public/social
 
 description: >
   I'm starting a new personal site that includes a blog! I'm not a great writer,

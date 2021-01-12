@@ -1,7 +1,7 @@
 import { promises as fsp } from 'fs'
 import defu from 'defu'
 import fetch from 'node-fetch'
-import { join, resolve } from 'path'
+import { dirname, join, resolve } from 'path'
 import puppeteer from 'puppeteer'
 import { URLSearchParams } from 'url'
 
@@ -13,7 +13,7 @@ const DEFAULT_CONFIG = {
   imageSelector: '#image',
 
   publicPath: '/social',
-  fileName: (doc, service) => `${doc.slug}-${service}.png`,
+  fileName: (doc, service) => `${doc.path}-${service}.jpg`,
 
   shouldGenerateFn: (field) => field != null && !field.includes('://') && !field.match(/\.(png|jpg)$/i)
 }
@@ -22,7 +22,7 @@ let browser = null
 let docs = []
 let port = 0
 
-export default function socialImages (moduleOptions) {
+export default function socialImages (moduleOptions, inject) {
   const options = defu(moduleOptions, this.nuxt.options.dynamicSocialPreviews, DEFAULT_CONFIG)
 
   this.nuxt.hook('content:file:beforeInsert', async (doc) => {
@@ -41,15 +41,14 @@ export default function socialImages (moduleOptions) {
   })
 
   this.nuxt.hook('listen', async (_, listener) => {
-    browser = await puppeteer.launch()
+    browser = await puppeteer.launch({
+      args: ['--font-render-hinting=none']
+    })
+
     port = listener.port
   })
 
   this.nuxt.hook('generate:distRemoved', async () => {
-    try {
-      await fsp.mkdir(join(this.nuxt.options.buildDir, 'dist/client', options.publicPath))
-    } catch {}
-
     await Promise.all(docs.map((doc) => downloadImages(doc, options, this.nuxt)))
   })
 
@@ -61,6 +60,9 @@ export default function socialImages (moduleOptions) {
 }
 
 async function downloadImages (doc, options, nuxt) {
+  const directory = dirname(doc.savePath)
+  await fsp.mkdir(directory, { recursive: true })
+
   const { html, error } = await nuxt.renderRoute(doc.generatePath, {
     contentPath: doc.path,
     socialService: doc.service
@@ -81,7 +83,7 @@ async function downloadImages (doc, options, nuxt) {
 
   await element.screenshot({
     path: doc.savePath,
-    type: 'png'
+    type: 'jpeg'
   })
 
   await page.close()
