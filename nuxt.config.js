@@ -49,7 +49,7 @@ export default {
 
   modules: [
     '~/modules/content-cleanup',
-    '~/modules/social-images',
+    '~/modules/dynamic-social-previews',
 
     '@nuxt/content',
   ],

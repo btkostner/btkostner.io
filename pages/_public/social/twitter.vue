@@ -6,19 +6,19 @@
 <template>
   <div class="min-h-screen grid place-items-center place-content-center">
     <div
-      class="ring-4 ring-offset-2 ring-black rounded flex items-center"
+      :class="`ring-4 ring-offset-2 ring-black rounded flex items-center ${service}`"
       id="image"
     >
       <div class="m-14">
         <h1 class="text-8xl">
-          {{ title }}
+          {{ post.title }}
         </h1>
 
         <h2
-          v-if="subtitle"
+          v-if="true"
           class="mt-6 text-5xl"
         >
-          {{ subtitle }}
+          by Blake Kostner
         </h2>
       </div>
     </div>
@@ -26,7 +26,7 @@
 </template>
 
 <style scoped>
-  #image {
+  .twitter#image {
     height: 628px;
     width: 1200px;
   }
@@ -36,14 +36,14 @@
 export default {
   layout: 'empty',
 
-  computed: {
-    subtitle () {
-      return this.$route.query.subtitle || 'by Blake Kostner'
-    },
+  async asyncData ({ $content, error, ssrContext }) {
+    const { contentPath, socialService } = ssrContext
 
-    title () {
-      return this.$route.query.title || 'Blake Kostner'
-    }
+    const post = await $content(contentPath)
+      .fetch()
+      .catch((e) => error({ statusCode: 404, message: 'Content Not Found' }))
+
+    return { post, service: socialService }
   }
 }
 </script>

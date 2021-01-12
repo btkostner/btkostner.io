@@ -27,7 +27,7 @@ export default {
 
         { hid: 'twitter:title', name: 'twitter:title', content: this.post.title },
         { hid: 'twitter:description', name: 'twitter:description', content: this.post.description },
-        { hid: 'twitter:image', name: 'twitter:image', content: `https://btkostner.io/public/social/${this.post.slug}-twitter.png` },
+        { hid: 'twitter:image', name: 'twitter:image', content: `https://btkostner.io/${this.post.twitterImage}` },
         { hid: 'twitter:image:alt', name: 'twitter:image:alt', content: this.post.title },
         { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' },
         { hid: 'twitter:site', name: 'twitter:site', content: '@nerdy_btkostner' }
