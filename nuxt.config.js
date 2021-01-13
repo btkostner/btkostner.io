@@ -4,6 +4,22 @@ export default {
   components: true,
 
   build: {
+    html: {
+      minify: {
+        collapseBooleanAttributes: true,
+        collapseWhitespace: true,
+        decodeEntities: true,
+        minifyCSS: true,
+        minifyJS: true,
+        processConditionalComments: true,
+        removeComments: true,
+        removeEmptyAttributes: true,
+        removeRedundantAttributes: true,
+        trimCustomFragments: true,
+        useShortDoctype: true
+      }
+    },
+
     publicPath: '/public/'
   },
 
@@ -58,7 +74,10 @@ export default {
     '@nuxt/content',
     '~modules/feed-config',
     '@nuxtjs/feed',
-    // '@nuxtjs/sitemap'
+    '~modules/sitemap-config',
+    '@nuxtjs/sitemap',
+    '~modules/robots-config',
+    '@nuxtjs/robots'
   ],
 
   plugins: [
