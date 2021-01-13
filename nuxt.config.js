@@ -28,7 +28,8 @@ export default {
   },
 
   generate: {
-    fallback: true
+    fallback: true,
+    subFolders: false
   },
 
   messages: {
