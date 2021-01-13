@@ -1,7 +1,7 @@
 <template>
   <main class="p-4 divide-y divide-gray-200 max-w-3xl mx-auto xl:max-w-5xl">
     <div class="py-8 space-y-2 md:space-y-5">
-      <h1 class="text-3xl leading-9 font-extrabold text-gray-900 tracking-tight sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+      <h1 class="text-4xl leading-9 font-extrabold font-display text-gray-900 md:text-6xl">
         {{ post.title }}
       </h1>
 
@@ -10,7 +10,7 @@
       </p>
     </div>
 
-    <article class="prose lg:prose-lg">
+    <article class="prose rose-lg lg:prose-xl">
       <nuxt-content :document="post" />
     </article>
   </main>

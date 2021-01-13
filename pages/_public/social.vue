@@ -10,13 +10,23 @@
       id="image"
     >
       <div class="m-8">
-        <h1 class="text-6xl">
+        <h1 class="text-6xl leading-9 font-extrabold font-display text-gray-900">
           {{ post.title }}
         </h1>
 
-        <h2 class="mt-6 text-3xl">
+        <h2 class="mt-6 text-3xl leading-7 text-gray-500">
           by Blake Kostner
         </h2>
+
+        <div class="text-base leading-6 font-medium mt-6">
+          <nuxt-link
+            class="text-red-700 hover:text-red-800"
+            :aria-label="`Read &quot;${post.title}&quot;`"
+            :to="`/blog/${post.slug}`"
+          >
+            Read more →
+          </nuxt-link>
+        </div>
       </div>
     </div>
   </div>

@@ -1,12 +1,14 @@
 <template>
   <main class="p-4 divide-y divide-gray-200">
     <div class="py-8 space-y-2 md:space-y-5">
-      <h1 class="text-3xl leading-9 font-extrabold text-gray-900 tracking-tight sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
-        Blake's Blog
+      <h1 class="text-4xl leading-9 font-extrabold font-display text-gray-900 md:text-6xl">
+        The Nerd Zone
       </h1>
 
-      <p class="text-lg leading-7 text-gray-500">
-        Here's a list of all my thoughts written out. Enjoy.
+      <p class="text-lg leading-7 text-gray-500 max-w-3xl">
+        Here's most of my thoughts written out. Nerdy stuff. Helpful tips I
+        don't want to lose. Random rants about technology. It's all here (or
+        soon to be.)
       </p>
     </div>
 
@@ -35,13 +37,13 @@
                     {{ post.title }}
                   </nuxt-link>
                 </h2>
-                <div class="prose max-w-none text-gray-500">
+                <div class="prose max-w-3xl text-gray-500">
                   {{ post.description }}
                 </div>
               </div>
               <div class="text-base leading-6 font-medium">
                 <nuxt-link
-                  class="text-red-500 hover:text-red-600"
+                  class="text-red-700 hover:text-red-800"
                   :aria-label="`Read &quot;${post.title}&quot;`"
                   :to="`/blog/${post.slug}`"
                 >
