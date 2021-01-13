@@ -4,22 +4,6 @@ export default {
   components: true,
 
   build: {
-    html: {
-      minify: {
-        collapseBooleanAttributes: true,
-        collapseWhitespace: true,
-        decodeEntities: true,
-        minifyCSS: true,
-        minifyJS: true,
-        processConditionalComments: true,
-        removeComments: true,
-        removeEmptyAttributes: true,
-        removeRedundantAttributes: true,
-        trimCustomFragments: true,
-        useShortDoctype: true
-      }
-    },
-
     publicPath: '/public/'
   },
 
@@ -42,7 +26,10 @@ export default {
     ],
 
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'manifest', href: '/public/manifest.json' },
+
+      { rel: 'shortcut icon', type: 'image/png', href: '/public/icons/icon_512x512.main.png' },
+      { rel: 'apple-touch-icon', href: '/public/icons/icon_512x512.main.png' }
     ]
   },
 
@@ -59,15 +46,18 @@ export default {
 
   css: [
     '@fortawesome/fontawesome-svg-core/styles.css',
-
     '~/assets/styles/override.css'
   ],
 
   buildModules: [
+    '~/modules/html-optimization',
     '~/modules/content-cleanup',
     '~/modules/dynamic-social-previews',
-
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    '~modules/robots-config',
+    '@nuxtjs/robots',
+    '~modules/pwa-config',
+    '@nuxtjs/pwa'
   ],
 
   modules: [
@@ -76,8 +66,6 @@ export default {
     '@nuxtjs/feed',
     '~modules/sitemap-config',
     '@nuxtjs/sitemap',
-    '~modules/robots-config',
-    '@nuxtjs/robots'
   ],
 
   plugins: [

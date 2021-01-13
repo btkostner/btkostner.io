@@ -1,6 +1,6 @@
 {
   "name": "btkostner.io",
-  "description": "Personal Website",
+  "description": "Blake Kostner's slice of the web. Senior web engineer at System76. Core team at elementary. Open source proselytizer, and drive by contributor.",
   "version": "4.0.0",
   "private": true,
   "scripts": {
@@ -9,6 +9,8 @@
   },
   "dependencies": {
     "@nuxt/content": "^1.11.1",
+    "@nuxtjs/feed": "^2.0.0",
+    "@nuxtjs/sitemap": "^2.4.0",
     "core-js": "^3.6.5",
     "nuxt": "^2.14.6"
   },
@@ -18,9 +20,8 @@
     "@fortawesome/free-brands-svg-icons": "^5.15.1",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "@fortawesome/vue-fontawesome": "^2.0.2",
-    "@nuxtjs/feed": "^2.0.0",
     "@nuxtjs/robots": "^2.4.2",
-    "@nuxtjs/sitemap": "^2.4.0",
+    "@nuxtjs/pwa": "^3.3.4",
     "@nuxtjs/tailwindcss": "^3.1.0",
     "@tailwindcss/aspect-ratio": "^0.2.0",
     "@tailwindcss/typography": "^0.3.1",
