@@ -15,7 +15,7 @@
         </h1>
 
         <h2 class="mt-6 text-3xl leading-7 text-gray-500">
-          by Blake Kostner
+          by {{ post.authorName }}
         </h2>
 
         <div class="text-base leading-6 font-medium mt-6">

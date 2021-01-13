@@ -48,14 +48,17 @@ export default {
   ],
 
   buildModules: [
+    '~/modules/content-cleanup',
+    '~/modules/dynamic-social-previews',
+
     '@nuxtjs/tailwindcss'
   ],
 
   modules: [
-    '~/modules/content-cleanup',
-    '~/modules/dynamic-social-previews',
-
     '@nuxt/content',
+    '~modules/feed-config',
+    '@nuxtjs/feed',
+    // '@nuxtjs/sitemap'
   ],
 
   plugins: [

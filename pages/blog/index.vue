@@ -61,7 +61,13 @@
 <script>
 export default {
   head: {
-    title: 'Blog'
+    title: 'Blog',
+
+    link: [
+      { hid: 'rss', rel: 'alternative', type: 'application/rss+xml', title: 'btkostner.io Blog', href: 'https://btkostner.io/blog.rss.xml' },
+      { hid: 'atom', rel: 'alternative', type: 'application/atom+xml', title: 'btkostner.io Blog', href: 'https://btkostner.io/blog.atom.xml' },
+      { hid: 'feed', rel: 'alternative', type: 'application/feed+json', title: 'btkostner.io Blog', href: 'https://btkostner.io/blog.json' }
+    ]
   },
 
   async asyncData({ $content }) {

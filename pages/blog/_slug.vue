@@ -31,6 +31,12 @@ export default {
         { hid: 'twitter:image:alt', name: 'twitter:image:alt', content: this.post.title },
         { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' },
         { hid: 'twitter:site', name: 'twitter:site', content: '@nerdy_btkostner' }
+      ],
+
+      link: [
+        { hid: 'rss', rel: 'alternative', type: 'application/rss+xml', title: 'btkostner.io Blog', href: 'https://btkostner.io/blog.rss.xml' },
+        { hid: 'atom', rel: 'alternative', type: 'application/atom+xml', title: 'btkostner.io Blog', href: 'https://btkostner.io/blog.atom.xml' },
+        { hid: 'feed', rel: 'alternative', type: 'application/feed+json', title: 'btkostner.io Blog', href: 'https://btkostner.io/blog.json' }
       ]
     }
   },

@@ -2,6 +2,8 @@
 
 title: hello world!
 
+authorName: Blake Kostner
+
 published: true
 createdAt: 2021-01-09T08:00:00.730Z
 
