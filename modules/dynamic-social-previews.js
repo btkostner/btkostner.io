@@ -35,7 +35,7 @@ export default function socialImages (moduleOptions, inject) {
           generatePath: doc[key]
         })
 
-        doc[key] = join(options.publicPath, this.nuxt.options.build.publicPath, options.fileName(doc, service))
+        doc[key] = join(this.nuxt.options.build.publicPath, options.publicPath, options.fileName(doc, service))
       }
     }
   })
