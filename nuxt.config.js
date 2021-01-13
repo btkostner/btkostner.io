@@ -9,6 +9,9 @@ export default {
 
   head: {
     title: 'btkostner.io',
+    titleTemplate: (title) => (title.indexOf('btkostner.io') === -1)
+      ? `${title} ⋅ btkostner.io`
+      : title,
 
     htmlAttrs: {
       lang: 'en'
@@ -19,7 +22,7 @@ export default {
 
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
 
-      { hid: 'description', name: 'description', content: `Blake Kostner's slice of the web` }
+      { hid: 'description', name: 'description', content: `Blake Kostner's slice of the web. Senior web engineer at System76. Core team at elementary. Open source proselytizer, and drive by contributor.` }
     ],
 
     link: [
