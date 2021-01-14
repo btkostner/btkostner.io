@@ -6,7 +6,7 @@
 <template>
   <div class="min-h-screen grid place-items-center place-content-center">
     <div
-      :class="`ring-4 ring-offset-2 ring-black rounded flex items-center ${service}`"
+      :class="`ring-4 ring-offset-2 ring-black rounded flex items-center ${field}`"
       id="image"
     >
       <div class="m-8">
@@ -33,7 +33,7 @@
 </template>
 
 <style scoped>
-  .twitter#image {
+  .twitterImage {
     height: 335px;
     width: 600px;
   }
@@ -44,13 +44,10 @@ export default {
   layout: 'empty',
 
   async asyncData ({ $content, error, ssrContext }) {
-    const { contentPath, socialService } = ssrContext
+    const { contentPath, contentField } = ssrContext
+    const post = await $content(contentPath).fetch()
 
-    const post = await $content(contentPath)
-      .fetch()
-      .catch((e) => error({ statusCode: 404, message: 'Content Not Found' }))
-
-    return { post, service: socialService }
+    return { post, field: contentField }
   }
 }
 </script>

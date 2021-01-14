@@ -52,7 +52,7 @@ export default {
   buildModules: [
     '~/modules/html-optimization',
     '~/modules/content-cleanup',
-    '~/modules/dynamic-social-previews',
+    'nuxt-dynamic-images',
     '@nuxtjs/tailwindcss',
     '~modules/robots-config',
     '@nuxtjs/robots',

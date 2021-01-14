@@ -20,15 +20,14 @@
     "@fortawesome/free-brands-svg-icons": "^5.15.1",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "@fortawesome/vue-fontawesome": "^2.0.2",
-    "@nuxtjs/robots": "^2.4.2",
     "@nuxtjs/pwa": "^3.3.4",
+    "@nuxtjs/robots": "^2.4.2",
     "@nuxtjs/tailwindcss": "^3.1.0",
     "@tailwindcss/aspect-ratio": "^0.2.0",
     "@tailwindcss/typography": "^0.3.1",
     "autoprefixer": "^9.8.6",
-    "defu": "^3.2.2",
+    "nuxt-dynamic-images": "0.0.1",
     "postcss": "^7.0.35",
-    "puppeteer": "^5.5.0",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2"
   }
 }
