@@ -2,7 +2,7 @@
   <main class="p-4 divide-y divide-gray-200">
     <div class="py-8 space-y-2 md:space-y-5">
       <h1 class="text-4xl leading-9 font-extrabold font-display text-gray-900 md:text-6xl">
-        the nerd zone
+        Nerd sh*t by Blake
       </h1>
 
       <p class="text-lg leading-7 text-gray-500 max-w-3xl">
@@ -61,7 +61,7 @@
 <script>
 export default {
   head: {
-    title: 'Blog',
+    title: 'Nerd sh*t by Blake',
 
     link: [
       { hid: 'rss', rel: 'alternative', type: 'application/rss+xml', title: 'btkostner.io Blog', href: 'https://btkostner.io/blog.rss.xml' },
