@@ -29,12 +29,12 @@
             aria-label="Toggle light and dark mode"
             @click.prevent="toggleColorPreference"
           >
-            <template v-if="$colorMode.preference === 'dark'">
+            <template v-if="$colorMode.value === 'dark'">
               <span class="sr-only">Dark mode on</span>
               <font-awesome-icon :icon="['fa', 'lightbulb']" />
             </template>
 
-            <template v-if="$colorMode.preference === 'light'">
+            <template v-if="$colorMode.value === 'light'">
               <span class="sr-only">Light mode on</span>
               <font-awesome-icon :icon="['fa', 'lightbulb-on']" />
             </template>
