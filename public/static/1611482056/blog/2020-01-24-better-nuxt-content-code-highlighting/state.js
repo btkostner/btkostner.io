@@ -1,0 +1,1 @@
+window.__NUXT__=(function(a,b){return {staticAssetsBase:"\u002Fpublic\u002Fstatic\u002F1611482056",layout:"default",error:null,serverRendered:a,routePath:"\u002Fblog\u002F2020-01-24-better-nuxt-content-code-highlighting",config:{content:{dbHash:"0bd20d9d"}},colorMode:{preference:b,value:b,unknown:a,forced:false}}}(true,"system"));
