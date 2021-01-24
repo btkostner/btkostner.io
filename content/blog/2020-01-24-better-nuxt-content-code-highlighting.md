@@ -42,14 +42,14 @@ Not shortly down the line, I found [shiki][4]. This project powers the code
 highlighting on the VS Code website, and the TypeScript website, so you know it
 means business.
 
-Integration with nuxt is pretty simple. There is even an
-[example in the docs][5]. What was not included was how to integrate
-this with tailwind dark mode. So I took a stab. The first two ideas did not
-work out so well, but I finally found a simple way of doing it.
+Integration with nuxt is pretty simple. There is even an [example in the
+docs][5]. What was not included was how to integrate this with [tailwind][7] and
+[nuxt color mode][6]. So I took a stab. The first two ideas did not work out so
+well, but I finally found a simple way of doing it.
 
 ### First idea
 
-Looking at the [shiki themes files][2] it's pretty easy to see the colors. So
+Looking at the [shiki theme files][2] it's pretty easy to see the colors. So
 my first idea was pretty simple. Replace the colors with `var(--code-00)` CSS
 variables. Sadly this attempt ended pretty quickly. Turns out that shiki will
 try to parse those values into hex codes, error out, and just return `#000000`.
@@ -138,3 +138,5 @@ Click the lightbulb in the footer to see the final product!
 [3]: https://github.com/btkostner/btkostner.io/tree/main/assets/styles/code-highlighting.css
 [4]: https://github.com/shikijs/shiki
 [5]: https://content.nuxtjs.org/snippets#custom-highlighter
+[6]: https://color-mode.nuxtjs.org/
+[7]: https://tailwindcss.nuxtjs.org/
