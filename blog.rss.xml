@@ -4,7 +4,7 @@
         <title>btkostner.io Blog</title>
         <link>https://btkostner.io/blog</link>
         <description>Here's most of my thoughts written out. Nerdy stuff. Helpful tips I don't want to lose. Random rants about technology. It's all here (or soon to be.)</description>
-        <lastBuildDate>Fri, 15 Jan 2021 19:52:46 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 24 Jan 2021 09:43:52 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/nuxt-community/feed-module</generator>
         <language>en</language>
@@ -18,6 +18,16 @@
             <category>nuxt</category>
             <category>small-talk</category>
             <category>web-dev</category>
+        </item>
+        <item>
+            <title><![CDATA[better nuxt content code highlighting]]></title>
+            <link>https://btkostner.io/blog/2020-01-24-better-nuxt-content-code-highlighting</link>
+            <guid>/blog/2020-01-24-better-nuxt-content-code-highlighting</guid>
+            <pubDate>Sun, 24 Jan 2021 08:00:00 GMT</pubDate>
+            <description><![CDATA[TIL you can use shiki as the default highlighter for nuxt content. This gives you a better tokenizing than the default highlighter, and allows you to use VS Code themes for your website. Bonus points for hacking together a working dark mode!]]></description>
+            <category>nuxt</category>
+            <category>TIL</category>
+            <category>tip</category>
         </item>
     </channel>
 </rss>
