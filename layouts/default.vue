@@ -11,10 +11,10 @@
             to="/"
             class="text-gray-600 hover:text-red-600 dark:text-gray-400"
           >
-            btkostner LLC.
+            btkostner
           </nuxt-link>
           <span class="text-gray-600 dark:text-gray-400">
-            Made in Colorado with
+            made in Colorado with
           </span>
           <font-awesome-icon icon="heart" class="hover-target-off text-gray-400 dark:text-gray-600" />
           <font-awesome-icon icon="cannabis" class="hover-target-on text-gray-400 dark:text-gray-600" />
