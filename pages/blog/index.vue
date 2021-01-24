@@ -1,11 +1,11 @@
 <template>
-  <main class="p-4 divide-y divide-gray-200">
+  <main class="p-4 divide-y divide-gray-200 dark:divide-gray-600 transition motion-reduce:transition-none">
     <div class="py-8 space-y-2 md:space-y-5">
-      <h1 class="text-4xl leading-9 font-extrabold font-display text-gray-900 md:text-6xl">
+      <h1 class="text-4xl leading-9 font-extrabold font-display text-red-700 dark:text-red-600 md:text-6xl">
         Nerd sh*t by Blake
       </h1>
 
-      <p class="text-lg leading-7 text-gray-500 max-w-3xl">
+      <p class="text-lg leading-7 text-gray-500 dark:text-gray-300 max-w-3xl">
         Here's most of my thoughts written out. Nerdy stuff. Helpful tips I
         don't want to lose. Random rants about technology. It's all here (or
         soon to be.)
@@ -13,7 +13,7 @@
     </div>
 
     <div>
-      <ul class="divide-y divide-gray-200">
+      <ul class="divide-y divide-gray-200 dark:divide-gray-600 transition motion-reduce:transition-none">
         <li
           v-for="post in posts"
           :key="post.slug"
@@ -22,7 +22,7 @@
           <article class="space-y-2 xl:grid xl:grid-cols-4 xl:space-y-0 xl:items-baseline">
             <dl>
               <dt class="sr-only">Published on</dt>
-              <dd class="text-base leading-6 font-medium text-gray-500">
+              <dd class="text-base leading-6 font-medium text-gray-500 dark:text-gray-400">
                 <time :datetime="post.createdAt">
                   {{ humanDayOfWeek(post.createdAt) }}<br />
                   {{ humanDate(post.createdAt) }}
@@ -33,17 +33,17 @@
             <div class="space-y-5 xl:col-span-3">
               <div class="space-y-6">
                 <h2 class="text-2xl leading-8 font-bold tracking-tight">
-                  <nuxt-link class="text-gray-900" :to="`/blog/${post.slug}`">
+                  <nuxt-link class="text-gray-900 dark:text-gray-200" :to="`/blog/${post.slug}`">
                     {{ post.title }}
                   </nuxt-link>
                 </h2>
-                <div class="prose max-w-3xl text-gray-500">
+                <div class="prose max-w-3xl text-gray-500 dark:text-gray-300">
                   {{ post.description }}
                 </div>
               </div>
               <div class="text-base leading-6 font-medium">
                 <nuxt-link
-                  class="text-red-700 hover:text-red-800"
+                  class="text-red-700 hover:text-red-800 dark:text-red-500 dark-hover:text-red-400"
                   :aria-label="`Read &quot;${post.title}&quot;`"
                   :to="`/blog/${post.slug}`"
                 >

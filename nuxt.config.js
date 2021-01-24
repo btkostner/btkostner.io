@@ -20,7 +20,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
 
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'viewport', content: 'width=device-width' },
 
       { hid: 'description', name: 'description', content: `Blake Kostner's slice of the web. Senior web engineer at System76. Core team at elementary. Open source proselytizer, and drive by contributor.` }
     ],
@@ -53,6 +53,8 @@ export default {
     '~/modules/html-optimization',
     '~/modules/content-cleanup',
     'nuxt-dynamic-images',
+    '~modules/color-config',
+    '@nuxtjs/color-mode',
     '@nuxtjs/tailwindcss',
     '~modules/robots-config',
     '@nuxtjs/robots',
@@ -61,6 +63,7 @@ export default {
   ],
 
   modules: [
+    '~modules/content-config',
     '@nuxt/content',
     '~modules/feed-config',
     '@nuxtjs/feed',

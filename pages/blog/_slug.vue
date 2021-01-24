@@ -1,16 +1,16 @@
 <template>
   <main class="p-4 divide-y divide-gray-200 max-w-3xl mx-auto xl:max-w-5xl">
     <div class="py-8 space-y-2 md:space-y-5">
-      <h1 class="text-4xl leading-9 font-extrabold font-display text-gray-900 md:text-6xl">
+      <h1 class="text-4xl leading-9 font-extrabold font-display text-gray-900 dark:text-gray-100 md:text-6xl">
         {{ post.title }}
       </h1>
 
-      <p class="text-lg leading-7 text-gray-500">
+      <p class="text-lg leading-7 text-gray-500 dark:text-gray-400">
         <span class="sr-only">Published</span> {{ humanDate(post.createdAt) }}
       </p>
     </div>
 
-    <article class="prose rose-lg lg:prose-xl">
+    <article class="prose rose-lg lg:prose-xl dark:prose-dark transition motion-reduce:transition-none">
       <nuxt-content :document="post" />
     </article>
   </main>
