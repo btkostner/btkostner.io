@@ -28,7 +28,7 @@
     "@tailwindcss/typography": "^0.3.1",
     "autoprefixer": "^9.8.6",
     "nuxt-dynamic-images": "0.0.1",
-    "postcss": "^7.0.35",
+    "postcss": "^8.2.10",
     "shiki": "^0.2.7",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2",
     "tailwindcss-dark-mode": "^1.1.7"
