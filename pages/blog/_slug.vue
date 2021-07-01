@@ -1,5 +1,5 @@
 <template>
-  <main class="p-4 divide-y divide-gray-200 max-w-3xl mx-auto xl:max-w-5xl">
+  <main class="p-4 divide-y divide-gray-200 dark:divide-gray-700 max-w-3xl mx-auto xl:max-w-5xl">
     <div class="py-8 space-y-2 md:space-y-5">
       <h1 class="text-4xl leading-9 font-extrabold font-display text-gray-900 dark:text-gray-100 md:text-6xl">
         {{ post.title }}
