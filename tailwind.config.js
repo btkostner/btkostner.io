@@ -2,6 +2,8 @@ const colors = require('tailwindcss/colors')
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
+  mode: 'jit',
+
   plugins: [
     require('@tailwindcss/aspect-ratio'),
     require('tailwindcss-dark-mode')(),
@@ -162,32 +164,6 @@ module.exports = {
           }
         },
       })
-    }
-  },
-
-  variants: {
-    extend: {
-      backgroundColor: [
-        'dark',
-        'dark-hover',
-        'dark-group-hover'
-      ],
-
-      borderColor: [
-        'dark',
-        'dark-focus',
-        'dark-focus-within'
-      ],
-
-      textColor: [
-        'dark',
-        'dark-hover',
-        'dark-active'
-      ],
-
-      typography: [
-        'dark'
-      ]
     }
   }
 }

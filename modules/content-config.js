@@ -1,9 +1,11 @@
-import { getHighlighter, loadTheme } from 'shiki'
+import { readFileSync } from 'fs'
 import { resolve } from 'path'
+import { getHighlighter } from 'shiki'
 
 export default async function contentConfig () {
-  const theme = loadTheme(resolve(__dirname, '../assets/shiki-themes/base16-css-vars.json'))
-  const highlighter = await getHighlighter({ theme })
+  const highlighter = await getHighlighter({
+    theme: JSON.parse(readFileSync(resolve(__dirname, '../assets/shiki-themes/base16-css-vars.json'), 'utf-8'))
+  })
 
   this.options.content = {
     markdown: {
