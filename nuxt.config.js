@@ -1,3 +1,5 @@
+import { theme } from './tailwind.config.js'
+
 export default {
   target: 'static',
 
@@ -22,7 +24,11 @@ export default {
 
       { name: 'viewport', content: 'width=device-width' },
 
-      { hid: 'description', name: 'description', content: `Blake Kostner's slice of the web. Senior web engineer at System76. Core team at elementary. Open source proselytizer, and drive by contributor.` }
+      { hid: 'description', name: 'description', content: `Blake Kostner's slice of the web. Senior web engineer at System76. Core team at elementary. Open source proselytizer, and drive by contributor.` },
+
+      { hid: 'color-scheme', name: 'color-scheme', content: 'dark light' },
+      { hid: 'theme-color-dark', name: 'theme-color', media: '(prefers-color-scheme: dark)', content: theme.colors.gray[900] },
+      { hid: 'theme-color-light', name: 'theme-color', media: '(prefers-color-scheme: light)', content: theme.colors.white }
     ],
 
     link: [
