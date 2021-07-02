@@ -59,7 +59,8 @@ export default {
     '~modules/robots-config',
     '@nuxtjs/robots',
     '~modules/pwa-config',
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    '@nuxt/image'
   ],
 
   modules: [
