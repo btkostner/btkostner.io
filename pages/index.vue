@@ -1,11 +1,12 @@
 <template>
   <main class="p-4 grid gap-4 text-center">
     <nuxt-picture
+      alt="Image of Blake Kostner"
       class="block mx-auto aspect-w-1 aspect-h-1 max-w-md w-full rounded-full overflow-hidden"
-      src="/images/homepage/avatar.jpg"
-      width="256"
       height="256"
       sizes="sm:100vw"
+      src="/images/homepage/avatar.jpg"
+      width="256"
     />
 
     <h1 class="text-5xl">
