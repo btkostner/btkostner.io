@@ -39,6 +39,12 @@ export default {
     ]
   },
 
+  colorMode: {
+    fallback: 'dark',
+    classPrefix: '',
+    classSuffix: ''
+  },
+
   generate: {
     fallback: true,
     subFolders: false
@@ -50,6 +56,10 @@ export default {
     server_error: 'Server Error'
   },
 
+  tailwindcss: {
+    exposeConfig: true
+  },
+
   css: [
     '@fortawesome/fontawesome-svg-core/styles.css',
     '~/assets/styles/override.css'
@@ -59,7 +69,6 @@ export default {
     '~/modules/html-optimization',
     '~/modules/content-cleanup',
     'nuxt-dynamic-images',
-    '~modules/color-config',
     '@nuxtjs/color-mode',
     '@nuxtjs/tailwindcss',
     '~modules/robots-config',

@@ -15,11 +15,11 @@
       </div>
 
       <div class="m-8 z-10">
-        <h1 class="text-6xl leading-1 font-extrabold font-display text-gray-200">
+        <h1 class="text-8xl leading-1 font-extrabold font-display text-gray-200">
           {{ post.title }}
         </h1>
 
-        <div class="text-base font-medium mt-6 text-red-500">
+        <div class="text-xl font-medium mt-12 text-red-500">
           Read more →
         </div>
       </div>
@@ -29,8 +29,8 @@
 
 <style scoped>
   .twitterImage {
-    height: 335px;
-    width: 600px;
+    height: 600px;
+    width: 1200px;
   }
 
   .leading-1 {

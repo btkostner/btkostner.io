@@ -29,7 +29,6 @@
     "@tailwindcss/aspect-ratio": "^0.2.1",
     "@tailwindcss/typography": "^0.4.1",
     "nuxt-dynamic-images": "0.0.1",
-    "shiki": "^0.9.5",
-    "tailwindcss-dark-mode": "^1.1.7"
+    "shiki": "^0.9.5"
   }
 }

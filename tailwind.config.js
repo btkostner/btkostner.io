@@ -3,10 +3,10 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
   mode: 'jit',
+  darkMode: 'class',
 
   plugins: [
     require('@tailwindcss/aspect-ratio'),
-    require('tailwindcss-dark-mode')(),
     require('@tailwindcss/typography')
   ],
 
