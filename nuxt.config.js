@@ -2,6 +2,7 @@ import { theme } from './tailwind.config.js'
 
 export default {
   target: 'static',
+  modern: 'client',
 
   components: true,
 
