@@ -51,6 +51,10 @@ export default {
     subFolders: false
   },
 
+  render: {
+    asyncScripts: true
+  },
+
   messages: {
     loading: 'Loading',
     error_404: 'Page Not Found',
