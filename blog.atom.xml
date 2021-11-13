@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id/>
     <title>btkostner.io Blog</title>
-    <updated>2021-08-18T04:35:44.072Z</updated>
+    <updated>2021-11-13T06:36:51.417Z</updated>
     <generator>https://github.com/nuxt-community/feed-module</generator>
     <link rel="alternate" href="https://btkostner.io/blog"/>
     <link rel="self" href="https://btkostner.io/blog.atom.xml"/>
@@ -11,7 +11,7 @@
         <title type="html"><![CDATA[hello world!]]></title>
         <id>/blog/2020-01-09-hello-world</id>
         <link href="https://btkostner.io/blog/2020-01-09-hello-world"/>
-        <updated>2021-08-18T04:34:35.752Z</updated>
+        <updated>2021-11-13T06:35:14.573Z</updated>
         <summary type="html"><![CDATA[I'm starting a new personal site that includes a blog! I'm not a great writer, but hopefully my thoughts will be helpful, if not a little entertaining. This goes over a bit of what the backend.]]></summary>
         <author>
             <name>Blake Kostner</name>
@@ -25,7 +25,7 @@
         <title type="html"><![CDATA[better nuxt content code highlighting]]></title>
         <id>/blog/2020-01-24-better-nuxt-content-code-highlighting</id>
         <link href="https://btkostner.io/blog/2020-01-24-better-nuxt-content-code-highlighting"/>
-        <updated>2021-08-18T04:34:35.752Z</updated>
+        <updated>2021-11-13T06:35:14.573Z</updated>
         <summary type="html"><![CDATA[TIL you can use shiki as the default highlighter for nuxt content. This gives you a better tokenizing than the default highlighter, and allows you to use VS Code themes for your website. Bonus points for hacking together a working dark mode!]]></summary>
         <author>
             <name>Blake Kostner</name>
