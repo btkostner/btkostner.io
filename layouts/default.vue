@@ -1,10 +1,12 @@
 <template>
   <div class="min-h-screen flex flex-col bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition motion-reduce:transition-none">
+    <layout-header />
+
     <div class="flex-grow">
       <Nuxt class="container mx-auto" />
     </div>
 
-    <footer class="flex-none px-6 py-2 border-t-2 border-gray-100 dark:border-gray-800 hover-target transition motion-reduce:transition-none">
+    <footer class="flex-none px-6 py-2 hover-target transition motion-reduce:transition-none">
       <div class="flex flex-col justify-between items-center container mx-auto md:flex-row">
         <div>
           <nuxt-link
@@ -16,8 +18,8 @@
           <span class="text-gray-600 dark:text-gray-400">
             made in Colorado with
           </span>
-          <font-awesome-icon icon="heart" class="hover-target-off text-gray-400 dark:text-gray-600" />
-          <font-awesome-icon icon="cannabis" class="hover-target-on text-gray-400 dark:text-gray-600" />
+          <font-awesome-icon :icon="['far', 'heart']" class="hover-target-off text-gray-400 dark:text-gray-600" />
+          <font-awesome-icon :icon="['far', 'cannabis']" class="hover-target-on text-gray-400 dark:text-gray-600" />
         </div>
 
         <div
@@ -31,12 +33,12 @@
           >
             <template v-if="$colorMode.value === 'dark'">
               <span class="sr-only">Dark mode on</span>
-              <font-awesome-icon :icon="['fa', 'lightbulb']" />
+              <font-awesome-icon :icon="['far', 'lightbulb']" />
             </template>
 
             <template v-if="$colorMode.value === 'light'">
               <span class="sr-only">Light mode on</span>
-              <font-awesome-icon :icon="['fa', 'lightbulb-on']" />
+              <font-awesome-icon :icon="['far', 'lightbulb-on']" />
             </template>
           </a>
         </div>
