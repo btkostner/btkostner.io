@@ -26,6 +26,7 @@ export default {
       { name: 'viewport', content: 'width=device-width' },
 
       { hid: 'description', name: 'description', content: `Blake Kostner's slice of the web. Senior web engineer at System76. Core team at elementary. Open source proselytizer, and drive by contributor.` },
+      { hid: 'twitter:site', name: 'twitter:site', content: '@nerdy_btkostner' },
 
       { hid: 'color-scheme', name: 'color-scheme', content: 'dark light' },
       { hid: 'theme-color-dark', name: 'theme-color', media: '(prefers-color-scheme: dark)', content: theme.colors.gray[900] },

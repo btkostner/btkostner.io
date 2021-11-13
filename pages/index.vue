@@ -61,12 +61,19 @@
         </a>
       </div>
 
-      <div class="my-4 mx-8 sm:text-xl md:text-2xl md:my-6 md:mx-16 lg:text-3xl lg:my-8 lg:mx-24 xl:text-4xl xl:my-12 xl:mx-44">
+      <div class="space-x space-x-12 my-4 mx-8 sm:text-xl md:text-2xl md:my-6 md:mx-16 lg:text-3xl lg:my-8 lg:mx-24 xl:text-4xl xl:my-12 xl:mx-44">
         <nuxt-link
           class="underline text-gray-700 dark:text-gray-200 hover:text-red-600 focus:text-red-600 dark:hover:text-red-600 dark:focus:text-red-600"
           to="/blog"
         >
           Blog
+        </nuxt-link>
+
+        <nuxt-link
+          class="underline text-gray-700 dark:text-gray-200 hover:text-red-600 focus:text-red-600 dark:hover:text-red-600 dark:focus:text-red-600"
+          to="/til"
+        >
+          TIL
         </nuxt-link>
       </div>
     </section>
