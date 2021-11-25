@@ -55,6 +55,7 @@ steps:
     uses: actions/checkout@v2
 
   - name: Install (Elixir)
+    id: beam
     uses: erlef/setup-beam@v1
     with:
       otp-version: 24
