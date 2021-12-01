@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>btkostner.io Blog</title>
+        <link>https://btkostner.io/blog</link>
+        <description>Here's most of my thoughts written out. Nerdy stuff. Helpful tips I don't want to lose. Random rants about technology. It's all here (or soon to be.)</description>
+        <lastBuildDate>Wed, 01 Dec 2021 04:45:49 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/nuxt-community/feed-module</generator>
+        <language>en</language>
+        <atom:link href="https://btkostner.io/blog.rss.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[hello world!]]></title>
+            <link>https://btkostner.io/blog/2020-01-09-hello-world</link>
+            <guid>/blog/2020-01-09-hello-world</guid>
+            <pubDate>Sat, 09 Jan 2021 08:00:00 GMT</pubDate>
+            <description><![CDATA[I'm starting a new personal site that includes a blog! I'm not a great writer, but hopefully my thoughts will be helpful, if not a little entertaining. This goes over a bit of what the backend.]]></description>
+            <category>nuxt</category>
+            <category>small-talk</category>
+            <category>web-dev</category>
+        </item>
+        <item>
+            <title><![CDATA[better nuxt content code highlighting]]></title>
+            <link>https://btkostner.io/blog/2020-01-24-better-nuxt-content-code-highlighting</link>
+            <guid>/blog/2020-01-24-better-nuxt-content-code-highlighting</guid>
+            <pubDate>Sun, 24 Jan 2021 08:00:00 GMT</pubDate>
+            <description><![CDATA[TIL you can use shiki as the default highlighter for nuxt content. This gives you a better tokenizing than the default highlighter, and allows you to use VS Code themes for your website. Bonus points for hacking together a working dark mode!]]></description>
+            <category>nuxt</category>
+            <category>TIL</category>
+            <category>tip</category>
+        </item>
+    </channel>
+</rss>
