@@ -71,7 +71,7 @@ export default {
 
   render: {
     asyncScripts: true,
-    base: (HAS_DEPLOY_PATH) ? DEPLOY_PATH : '/'
+    base: (HAS_DEPLOY_PATH) ? `${DEPLOY_PATH}/` : '/'
   },
 
   messages: {
