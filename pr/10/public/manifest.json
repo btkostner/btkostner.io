@@ -4,43 +4,43 @@
   "description": "Blake Kostner's slice of the web. Senior web engineer at System76. Core team at elementary. Open source proselytizer, and drive by contributor.",
   "icons": [
     {
-      "src": "/pr/10/public/icons/icon_64x64.main.png",
+      "src": "/public/icons/icon_64x64.main.png",
       "sizes": "64x64",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/pr/10/public/icons/icon_120x120.main.png",
+      "src": "/public/icons/icon_120x120.main.png",
       "sizes": "120x120",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/pr/10/public/icons/icon_144x144.main.png",
+      "src": "/public/icons/icon_144x144.main.png",
       "sizes": "144x144",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/pr/10/public/icons/icon_152x152.main.png",
+      "src": "/public/icons/icon_152x152.main.png",
       "sizes": "152x152",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/pr/10/public/icons/icon_192x192.main.png",
+      "src": "/public/icons/icon_192x192.main.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/pr/10/public/icons/icon_384x384.main.png",
+      "src": "/public/icons/icon_384x384.main.png",
       "sizes": "384x384",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/pr/10/public/icons/icon_512x512.main.png",
+      "src": "/public/icons/icon_512x512.main.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
