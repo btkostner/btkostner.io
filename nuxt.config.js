@@ -1,5 +1,10 @@
 import { theme } from './tailwind.config.js'
 
+// If the DEPLOY_PATH env is set, we change up routing to that path and add
+// special noindex meta tags. This is used for deploying PRs to subpaths.
+const DEPLOY_PATH = (process.env.DEPLOY_PATH === undefined) ? '' : process.env.DEPLOY_PATH
+const HAS_DEPLOY_PATH = (DEPLOY_PATH !== '')
+
 export default {
   target: 'static',
   modern: 'client',
@@ -7,7 +12,7 @@ export default {
   components: true,
 
   build: {
-    publicPath: '/public/'
+    publicPath: `${DEPLOY_PATH}/public/`
   },
 
   head: {
@@ -30,14 +35,26 @@ export default {
 
       { hid: 'color-scheme', name: 'color-scheme', content: 'dark light' },
       { hid: 'theme-color-dark', name: 'theme-color', media: '(prefers-color-scheme: dark)', content: theme.colors.gray[900] },
-      { hid: 'theme-color-light', name: 'theme-color', media: '(prefers-color-scheme: light)', content: theme.colors.white }
+      { hid: 'theme-color-light', name: 'theme-color', media: '(prefers-color-scheme: light)', content: theme.colors.white },
+
+      ...(HAS_DEPLOY_PATH ? [
+        { hid: 'robots', name: 'robots', content: 'noindex' }
+      ] : [])
     ],
 
     link: [
-      { rel: 'manifest', href: '/public/manifest.json' },
+      { rel: 'manifest', href: `${DEPLOY_PATH}/public/manifest.json` },
 
-      { rel: 'shortcut icon', type: 'image/png', href: '/public/icons/icon_512x512.main.png' },
-      { rel: 'apple-touch-icon', href: '/public/icons/icon_512x512.main.png' }
+      { rel: 'shortcut icon', type: 'image/png', href: `${DEPLOY_PATH}/public/icons/icon_512x512.main.png` },
+      { rel: 'apple-touch-icon', href: `${DEPLOY_PATH}/public/icons/icon_512x512.main.png` }
+    ],
+
+    script: [
+      ...(!HAS_DEPLOY_PATH ? [{
+        defer: true,
+        src: 'https://static.cloudflareinsights.com/beacon.min.js',
+        'data-cf-beacon': JSON.stringify({ token: '45f98848214e48da9dd3b692f169c347' })
+      }] : [])
     ]
   },
 

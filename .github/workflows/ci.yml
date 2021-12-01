@@ -1,24 +1,21 @@
 ---
 
-name: Deploy
+name: CI
 
 on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
   push:
     branches:
       - main
 
-concurrency:
-  group: Production
-  cancel-in-progress: true
-
 jobs:
-  GitHub_Pages:
-    name: GitHub Pages
+  Build:
+    name: Build
     runs-on: ubuntu-latest
-
-    environment:
-      name: Production
-      url: https://btkostner.io
 
     steps:
       - name: Checkout
@@ -47,11 +44,3 @@ jobs:
         run: npm run build
         env:
           FONTAWESOME_NPM_AUTH_TOKEN: ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          cname: btkostner.io
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          keep_files: true
-          publish_dir: ./dist
