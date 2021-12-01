@@ -12,7 +12,7 @@ export default {
   components: true,
 
   build: {
-    publicPath: `${DEPLOY_PATH}/public/`
+    publicPath: `/public/`
   },
 
   head: {
@@ -70,7 +70,8 @@ export default {
   },
 
   render: {
-    asyncScripts: true
+    asyncScripts: true,
+    base: (HAS_DEPLOY_PATH) ? DEPLOY_PATH : '/'
   },
 
   messages: {
