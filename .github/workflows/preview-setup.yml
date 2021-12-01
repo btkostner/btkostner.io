@@ -9,6 +9,9 @@ on:
       - reopened
       - synchronize
 
+permissions:
+  deployments: write
+
 concurrency:
   group: Preview PR ${{ github.event.number }}
   cancel-in-progress: true
