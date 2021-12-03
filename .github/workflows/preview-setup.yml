@@ -1,14 +1,16 @@
 ---
 
-name: Deploy
+name: Preview Setup
 
 on:
-  push:
-    branches:
-      - main
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
 
 concurrency:
-  group: Production
+  group: Preview PR ${{ github.event.number }}
   cancel-in-progress: true
 
 jobs:
@@ -17,8 +19,8 @@ jobs:
     runs-on: ubuntu-latest
 
     environment:
-      name: Production
-      url: https://btkostner.io
+      name: Preview
+      url: https://btkostner.io/pr/${{ github.event.number }}
 
     steps:
       - name: Checkout
@@ -46,12 +48,12 @@ jobs:
       - name: Build
         run: npm run build
         env:
+          DEPLOY_PATH: /pr/${{ github.event.number }}
           FONTAWESOME_NPM_AUTH_TOKEN: ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          cname: btkostner.io
+          destination_dir: ./pr/${{ github.event.number }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          keep_files: true
           publish_dir: ./dist
