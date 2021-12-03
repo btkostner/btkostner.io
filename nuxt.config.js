@@ -70,7 +70,10 @@ export default {
   },
 
   render: {
-    asyncScripts: true,
+    asyncScripts: true
+  },
+
+  router: {
     base: (HAS_DEPLOY_PATH) ? `${DEPLOY_PATH}/` : '/'
   },
 

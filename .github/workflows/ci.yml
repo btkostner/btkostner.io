@@ -44,3 +44,33 @@ jobs:
         run: npm run build
         env:
           FONTAWESOME_NPM_AUTH_TOKEN: ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}
+
+  Lint:
+    name: Lint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install (Node)
+        uses: actions/setup-node@v2
+        with:
+          cache: npm
+          node-version: '16.13.0'
+
+      - name: Cache
+        id: cache
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: 16.13.0-${{ hashFiles('package-lock.json') }}
+
+      - name: Install (Npm)
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm install --prefer-offline --no-audit --no-fund
+        env:
+          FONTAWESOME_NPM_AUTH_TOKEN: ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}
+
+      - name: Lint
+        run: npm run lint
