@@ -27,7 +27,7 @@ jobs:
         id: fetch
         uses: octokit/request-action@v2.x
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_DEPLOY_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           route: GET /repos/{owner}/{repo}/deployments
           owner: ${{ github.event.repository.owner.login }}
@@ -45,7 +45,7 @@ jobs:
       - name: Destroy
         uses: octokit/request-action@v2.x
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_DEPLOY_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           route: POST /repos/{owner}/{repo}/deployments/{deployment_id}/statuses
           owner: ${{ github.event.repository.owner.login }}
