@@ -1,6 +1,6 @@
 ---
 
-name: Preview Setup
+name: Preview
 
 on:
   pull_request:
@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
 
     environment:
-      name: Preview PR ${{ github.event.number }}
+      name: Preview
       url: https://btkostner.io/pr/${{ github.event.number }}
 
     steps:
@@ -57,3 +57,52 @@ jobs:
           destination_dir: ./pr/${{ github.event.number }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+
+---
+
+name: Preview
+
+on:
+  pull_request:
+    types:
+      - closed
+
+concurrency:
+  group: Preview PR ${{ github.event.number }}
+  cancel-in-progress: true
+
+jobs:
+  GitHub_Pages:
+    name: GitHub Pages
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Fetch
+        id: fetch
+        uses: octokit/request-action@v2.x
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_DEPLOY_KEY }}
+        with:
+          route: GET /repos/{owner}/{repo}/deployments
+          owner: ${{ github.event.repository.owner.login }}
+          repo: ${{ github.event.repository.name }}
+          ref: ${{ github.event.pull_request.head.ref }}
+          environment: Preview
+
+      - name: Delete
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          destination_dir: ./pr/${{ github.event.number }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+
+      - name: Destroy
+        uses: octokit/request-action@v2.x
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_DEPLOY_KEY }}
+        with:
+          route: POST /repos/{owner}/{repo}/deployments/{deployment_id}/statuses
+          owner: ${{ github.event.repository.owner.login }}
+          repo: ${{ github.event.repository.name }}
+          deployment_id: ${{ fromJson(steps.fetch.outputs.data)[0].id }}
+          state: inactive
