@@ -39,7 +39,7 @@ jobs:
 
       - name: Install (Npm)
         if: steps.cache.outputs.cache-hit != 'true'
-        run: npm install --prefer-offline --no-audit --no-fund
+        run: npm ci --prefer-offline --no-audit --no-fund
         env:
           FONTAWESOME_NPM_AUTH_TOKEN: ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}
 
