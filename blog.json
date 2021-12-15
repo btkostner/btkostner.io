@@ -10,7 +10,7 @@
             "url": "https://btkostner.io/blog/2020-01-09-hello-world",
             "title": "hello world!",
             "summary": "I'm starting a new personal site that includes a blog! I'm not a great writer, but hopefully my thoughts will be helpful, if not a little entertaining. This goes over a bit of what the backend.",
-            "date_modified": "2021-12-03T22:03:09.877Z",
+            "date_modified": "2021-12-15T22:12:02.563Z",
             "date_published": "2021-01-09T08:00:00.730Z",
             "author": {
                 "name": "Blake Kostner"
@@ -26,7 +26,7 @@
             "url": "https://btkostner.io/blog/2020-01-24-better-nuxt-content-code-highlighting",
             "title": "better nuxt content code highlighting",
             "summary": "TIL you can use shiki as the default highlighter for nuxt content. This gives you a better tokenizing than the default highlighter, and allows you to use VS Code themes for your website. Bonus points for hacking together a working dark mode!",
-            "date_modified": "2021-12-03T22:03:09.877Z",
+            "date_modified": "2021-12-15T22:12:02.563Z",
             "date_published": "2021-01-24T08:00:00.730Z",
             "author": {
                 "name": "Blake Kostner"
