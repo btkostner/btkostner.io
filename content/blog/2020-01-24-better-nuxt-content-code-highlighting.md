@@ -1,5 +1,4 @@
 ---
-
 title: better nuxt content code highlighting
 
 authorName: Blake Kostner
@@ -19,7 +18,6 @@ tags:
   - nuxt
   - TIL
   - tip
-
 ---
 
 ## TL;DR

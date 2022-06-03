@@ -1,5 +1,4 @@
 ---
-
 title: my favorite tech stacks
 
 published: false
@@ -11,7 +10,6 @@ description: |
 
 tags:
   - web-dev
-
 ---
 
 # My favorite tech stacks

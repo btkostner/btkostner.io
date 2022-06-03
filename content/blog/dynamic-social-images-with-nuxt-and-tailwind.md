@@ -1,5 +1,4 @@
 ---
-
 title: dynamic social images with Nuxt and Tailwind
 
 published: false
@@ -14,7 +13,6 @@ tags:
   - nuxt
   - tailwind
   - web-dev
-
 ---
 
 I'm lazy. And I'm not a great designer. So when I started to blog about things,

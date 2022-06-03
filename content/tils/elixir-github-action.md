@@ -1,11 +1,9 @@
 ---
-
 title: Elixir cache busting in GitHub actions
 
 tags:
   - elixir
   - github
-
 ---
 
 Most blogs will show a simple Elixir GitHub action workflow with these cache busting settings:
