@@ -1,14 +1,11 @@
 ---
-name: Deploy
+name: Preview
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch: {}
 
 concurrency:
-  group: Production
-  cancel-in-progress: true
+  group: Preview
 
 jobs:
   Publish:
@@ -53,4 +50,3 @@ jobs:
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          environment: production

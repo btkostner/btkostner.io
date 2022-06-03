@@ -1,9 +1,8 @@
-name = "btkostner.io"
+name = "btkostner.io development"
 type = "javascript"
-account_id = "<the account_id you obtained>"
 workers_dev = true
 route = ""
-zone_id = ""
+zone_id = "cca30cda5e68149641236609d2e15383"
 compatibility_date = "2022-04-07"
 
 [site]
@@ -13,3 +12,7 @@ entry-point = ".output"
 [build]
 command = ""
 upload.format = "service-worker"
+
+[env.production]
+name = "btkostner.io production"
+route = "btkostner.io/*"
