@@ -93,7 +93,7 @@
                         darkModeToggled ? 'bg-neutral-900' : 'bg-neutral-400'
                       "
                       class="relative inline-flex h-6 w-11 items-center rounded-full transition duration-200 ease-in-out"
-                      :modelValue="darkModeToggled"
+                      :model-value="darkModeToggled"
                       @update:modelValue="onDarkModeToggle"
                     >
                       <span
@@ -156,7 +156,7 @@
               <Switch
                 :class="darkModeToggled ? 'bg-neutral-900' : 'bg-neutral-400'"
                 class="relative inline-flex h-6 w-11 items-center rounded-full transition duration-200 ease-in-out"
-                :modelValue="darkModeToggled"
+                :model-value="darkModeToggled"
                 @update:modelValue="onDarkModeToggle"
               >
                 <span
