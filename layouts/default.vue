@@ -1,218 +1,71 @@
 <template>
   <div>
-    <TransitionRoot as="template" :show="sidebarOpen">
-      <Dialog
-        as="div"
-        class="relative z-40 md:hidden"
-        @close="sidebarOpen = false"
+    <header
+      class="fixed z-40 w-full pointer-coarse:bottom-16 pointer-fine:top-0"
+    >
+      <nav
+        class="mx-auto flex max-w-screen-xl place-content-between items-center px-4 py-4"
       >
-        <TransitionChild
-          as="template"
-          enter="transition-opacity ease-linear duration-300"
-          enter-from="opacity-0"
-          enter-to="opacity-100"
-          leave="transition-opacity ease-linear duration-300"
-          leave-from="opacity-100"
-          leave-to="opacity-0"
+        <div
+          class="inline-flex space-x-[1px] rounded-full backdrop-blur-lg backdrop-brightness-200"
         >
-          <div
-            class="fixed inset-0 bg-neutral-600 bg-opacity-75 backdrop-blur"
-          />
-        </TransitionChild>
-
-        <div class="fixed inset-0 z-40 flex">
-          <TransitionChild
-            as="template"
-            enter="transition ease-in-out duration-300 transform"
-            enter-from="-translate-x-full"
-            enter-to="translate-x-0"
-            leave="transition ease-in-out duration-300 transform"
-            leave-from="translate-x-0"
-            leave-to="-translate-x-full"
+          <NuxtLink
+            v-for="(item, idx) in navigation"
+            :key="item.name"
+            :to="item.href"
+            :class="{
+              'relative inline-flex items-center px-4 py-2 text-sm font-medium shadow-border hover:z-30 hover:shadow-orange-500 focus:z-20 focus:shadow-orange-500 focus:outline-none': true,
+              'z-10 bg-neutral-100/80 text-neutral-900 shadow-orange-500 dark:bg-neutral-900/90 dark:text-neutral-50 dark:shadow-orange-600':
+                item.href === $route.path,
+              'bg-neutral-300/40 shadow-gray-400/60 dark:bg-neutral-800/80 dark:text-white':
+                item.href !== $route.path,
+              'rounded-l-full': idx === 0,
+              'rounded-r-full': idx === navigation.length - 1,
+            }"
           >
-            <DialogPanel
-              class="relative flex w-full max-w-xs flex-1 flex-col bg-white"
-            >
-              <TransitionChild
-                as="template"
-                enter="ease-in-out duration-300"
-                enter-from="opacity-0"
-                enter-to="opacity-100"
-                leave="ease-in-out duration-300"
-                leave-from="opacity-100"
-                leave-to="opacity-0"
-              >
-                <div class="absolute top-0 right-0 -mr-12 pt-2">
-                  <button
-                    type="button"
-                    class="ml-1 flex h-10 w-10 items-center justify-center rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-                    @click="sidebarOpen = false"
-                  >
-                    <span class="sr-only">Close sidebar</span>
-                    <XIcon class="h-6 w-6 text-white" aria-hidden="true" />
-                  </button>
-                </div>
-              </TransitionChild>
-
-              <div class="h-0 flex-1 overflow-y-auto pt-5 pb-4">
-                <nav class="space-y-1 px-2">
-                  <NuxtLink
-                    v-for="item in navigation"
-                    :key="item.name"
-                    :to="item.href"
-                    :class="[
-                      item.current
-                        ? 'bg-neutral-100 text-neutral-900'
-                        : 'text-neutral-600 hover:bg-neutral-50 hover:text-neutral-900',
-                      'group flex items-center rounded-md px-2 py-2 text-base font-medium',
-                    ]"
-                  >
-                    <component
-                      :is="item.icon"
-                      :class="[
-                        item.current
-                          ? 'text-neutral-500'
-                          : 'text-neutral-400 group-hover:text-neutral-500',
-                        'mr-4 h-6 w-6 flex-shrink-0',
-                      ]"
-                      aria-hidden="true"
-                    />
-                    {{ item.name }}
-                  </NuxtLink>
-                </nav>
-              </div>
-
-              <div
-                v-if="!colorMode.forced"
-                class="border-1 flex flex-shrink-0 border-neutral-200 p-4"
-              >
-                <SwitchGroup>
-                  <div class="flex items-center">
-                    <Switch
-                      :class="
-                        darkModeToggled ? 'bg-neutral-900' : 'bg-neutral-400'
-                      "
-                      class="relative inline-flex h-6 w-11 items-center rounded-full transition duration-200 ease-in-out"
-                      :model-value="darkModeToggled"
-                      @update:modelValue="onDarkModeToggle"
-                    >
-                      <span
-                        :class="
-                          darkModeToggled ? 'translate-x-6' : 'translate-x-1'
-                        "
-                        class="inline-block h-4 w-4 transform rounded-full bg-white transition duration-200 ease-in-out"
-                      />
-                    </Switch>
-                    <SwitchLabel class="ml-4">Dark Mode</SwitchLabel>
-                  </div>
-                </SwitchGroup>
-              </div>
-            </DialogPanel>
-          </TransitionChild>
-
-          <div class="w-14 flex-shrink-0" />
-        </div>
-      </Dialog>
-    </TransitionRoot>
-
-    <div class="hidden md:fixed md:inset-y-0 md:flex md:w-64 md:flex-col">
-      <div
-        class="flex min-h-0 flex-1 flex-col border-r border-neutral-200 bg-white"
-      >
-        <div class="flex flex-1 flex-col overflow-y-auto pt-5 pb-4">
-          <nav class="flex-1 space-y-1 bg-white px-2">
-            <a
-              v-for="item in navigation"
-              :key="item.name"
-              :href="item.href"
-              :class="[
-                item.current
-                  ? 'bg-neutral-100 text-neutral-900'
-                  : 'text-neutral-600 hover:bg-neutral-50 hover:text-neutral-900',
-                'group flex items-center rounded-md px-2 py-2 text-sm font-medium',
-              ]"
-            >
-              <component
-                :is="item.icon"
-                :class="[
-                  item.current
-                    ? 'text-neutral-500'
-                    : 'text-neutral-400 group-hover:text-neutral-500',
-                  'mr-3 h-6 w-6 flex-shrink-0',
-                ]"
-                aria-hidden="true"
-              />
-              {{ item.name }}
-            </a>
-          </nav>
+            {{ item.name }}
+          </NuxtLink>
         </div>
 
         <div
-          v-if="!colorMode.forced"
-          class="border-1 flex flex-shrink-0 border-neutral-200 p-4"
+          class="inline-flex space-x-[1px] rounded-full backdrop-blur-lg backdrop-brightness-200"
         >
-          <SwitchGroup>
-            <div class="flex items-center">
-              <Switch
-                :class="darkModeToggled ? 'bg-neutral-900' : 'bg-neutral-400'"
-                class="relative inline-flex h-6 w-11 items-center rounded-full transition duration-200 ease-in-out"
-                :model-value="darkModeToggled"
-                @update:modelValue="onDarkModeToggle"
-              >
-                <span
-                  :class="darkModeToggled ? 'translate-x-6' : 'translate-x-1'"
-                  class="inline-block h-4 w-4 transform rounded-full bg-white transition duration-200 ease-in-out"
-                />
-              </Switch>
-              <SwitchLabel class="ml-4">Dark Mode</SwitchLabel>
-            </div>
-          </SwitchGroup>
+          <button
+            class="focus:outline-none': true, 'z-10 relative inline-flex items-center rounded-full bg-neutral-100/80 bg-neutral-300/40 px-4 py-2 text-sm font-medium text-neutral-900 shadow-border shadow-gray-400/60 hover:z-30 hover:shadow-orange-500 focus:z-20 focus:shadow-orange-500 dark:bg-neutral-900/90 dark:bg-neutral-800/80 dark:text-neutral-50 dark:text-white"
+            @click="toggleAppearanceDark"
+          >
+            <SunIcon v-show="!isAppearanceDark" class="w-5" />
+            <MoonIcon v-show="isAppearanceDark" class="w-5" />
+            <span class="sr-only">Appearance</span>
+          </button>
         </div>
-      </div>
-    </div>
+      </nav>
+    </header>
 
-    <button
-      type="button"
-      class="fixed top-1 left-1 z-10 inline-flex h-12 w-12 items-center justify-center rounded-md bg-white text-neutral-500 backdrop-blur hover:text-neutral-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-neutral-500 md:hidden"
-      @click="sidebarOpen = true"
+    <slot />
+
+    <footer
+      class="mx-auto flex max-w-screen-xl place-content-center items-center px-4 py-4 text-sm font-medium pointer-coarse:pt-20"
     >
-      <span class="sr-only">Open sidebar</span>
-      <MenuIcon class="h-6 w-6" aria-hidden="true" />
-    </button>
-
-    <main class="flex flex-1 flex-col md:pl-64">
-      <slot />
-    </main>
+      <p class="text-gray-600 dark:text-gray-400">
+        Made by Blake in Colorado. <br />
+        Powered by Nuxt and voodoo magic.
+      </p>
+    </footer>
   </div>
 </template>
 
 <script setup>
-import {
-  Dialog,
-  DialogPanel,
-  Switch,
-  SwitchLabel,
-  SwitchGroup,
-  TransitionChild,
-  TransitionRoot,
-} from "@headlessui/vue";
-import {
-  InformationCircleIcon,
-  MenuIcon,
-  BookOpenIcon,
-  XIcon,
-} from "@heroicons/vue/outline";
+import { MoonIcon, SunIcon } from "@heroicons/vue/24/outline";
 
 const navigation = [
-  { name: "About", href: "/", icon: InformationCircleIcon, current: true },
-  { name: "Reading", href: "/reading", icon: BookOpenIcon, current: false },
+  { name: "About", href: "/" },
+  { name: "Reading", href: "/reading" },
 ];
 
 const colorMode = useColorMode();
-const sidebarOpen = ref(false);
-
-const darkModeToggled = computed(() => colorMode.value === "dark");
-const onDarkModeToggle = (value) => {
-  colorMode.preference = value ? "dark" : "light";
+const isAppearanceDark = computed(() => colorMode.value === "dark");
+const toggleAppearanceDark = () => {
+  colorMode.preference = colorMode.value === "light" ? "dark" : "light";
 };
 </script>

@@ -1,9 +1,16 @@
 ---
 title: Elixir cache busting in GitHub actions
-
+description: >
+  Fixing Elixir GitHub action cache busting issues
 tags:
   - elixir
+  - gha
   - github
+  - til
+  - web-dev
+authorName: Blake Kostner
+published: true
+createdAt: 2021-11-24T08:00:00.730Z
 ---
 
 Most blogs will show a simple Elixir GitHub action workflow with these cache busting settings:

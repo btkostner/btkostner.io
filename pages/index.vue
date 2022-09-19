@@ -1,19 +1,40 @@
 <template>
-  <div class="flex w-full flex-1 flex-col">
+  <div
+    class="content-stretch relative z-0 grid min-h-[90vh] items-stretch justify-items-stretch overflow-hidden bg-whitewashed-fence-100 dark:bg-whitewashed-fence-900"
+  >
     <div
-      class="my-8 mx-8 md:my-16 md:mx-16 lg:my-24 lg:mx-24 xl:my-44 xl:mx-44"
-    >
-      <h1
-        class="mt-4 text-3xl text-gray-800 dark:text-gray-200 md:mt-8 md:text-4xl lg:text-6xl xl:text-8xl"
-      >
-        Blake Kostner
-      </h1>
+      class="absolute top-[-400px] left-[-400px] -z-10 h-[800px] w-[1000px] rounded-full bg-red-cray-100 blur-[256px] dark:bg-red-cray-900"
+    />
+    <div
+      class="absolute bottom-[-400px] right-[-400px] -z-10 h-[1000px] w-[800px] rounded-full bg-mirage-of-violets-200 blur-[256px] dark:bg-mirage-of-violets-900"
+    />
 
-      <h2
-        class="mt-1 text-lg uppercase text-red-700 dark:text-red-600 md:text-xl lg:mt-2 lg:text-2xl xl:text-4xl"
-      >
-        Full stack web developer
-      </h2>
+    <div
+      class="mx-auto grid h-full w-full max-w-screen-xl flex-row items-center border-l-[1px] border-r-[1px] border-red-cray-200 bg-neutral-400/10 px-4 dark:border-mirage-of-violets-700/40 dark:bg-neutral-800/10"
+    >
+      <div class="mx-auto max-w-screen-xl py-20">
+        <div class="text-black dark:text-white">
+          <h1
+            class="text-xl font-bold leading-tight sm:text-3xl md:text-4xl lg:text-6xl"
+          >
+            Hi!<br />
+            My name is
+            <span
+              class="relative z-10 ml-2 inline-block text-white before:absolute before:-top-0 before:-left-2 before:-bottom-0 before:-right-2 before:-z-10 before:block before:bg-red-cray-400 dark:text-white dark:before:bg-red-cray-500"
+              >Blake Kostner</span
+            ><br />
+            and I’m a Site Reliability Engineer.
+          </h1>
+
+          <h2 class="pt-6 text-sm sm:text-xl lg:text-2xl">
+            And Elixir programmer.<br class="lg:hidden" />
+            And front-end web developer.<br class="lg:hidden" />
+            And all around nerd.
+          </h2>
+        </div>
+      </div>
     </div>
   </div>
 </template>
+
+<script></script>
