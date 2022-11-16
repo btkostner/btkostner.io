@@ -11,6 +11,10 @@ on:
     branches:
       - main
 
+concurrency:
+  group: CI
+  cancel-in-progress: true
+
 jobs:
   Build:
     name: Build

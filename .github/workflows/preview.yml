@@ -13,8 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     environment:
-      name: Production
-      url: https://btkostner.io
+      name: Preview
 
     steps:
       - name: Checkout
