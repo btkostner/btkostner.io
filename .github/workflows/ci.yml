@@ -40,13 +40,10 @@ jobs:
       - name: Install (Npm)
         if: steps.cache.outputs.cache-hit != 'true'
         run: npm ci --prefer-offline --no-audit --no-fund
-        env:
-          FONTAWESOME_NPM_AUTH_TOKEN: ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}
 
       - name: Build
         run: npm run build
         env:
-          FONTAWESOME_NPM_AUTH_TOKEN: ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}
           NITRO_PRESET: cloudflare
 
   Format:
@@ -73,8 +70,6 @@ jobs:
       - name: Install (Npm)
         if: steps.cache.outputs.cache-hit != 'true'
         run: npm ci --prefer-offline --no-audit --no-fund
-        env:
-          FONTAWESOME_NPM_AUTH_TOKEN: ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}
 
       - name: Format
         run: npm run format -- --check
@@ -103,8 +98,6 @@ jobs:
       - name: Install (Npm)
         if: steps.cache.outputs.cache-hit != 'true'
         run: npm ci --prefer-offline --no-audit --no-fund
-        env:
-          FONTAWESOME_NPM_AUTH_TOKEN: ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}
 
       - name: Lint
         run: npm run lint
