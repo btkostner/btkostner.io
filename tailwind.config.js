@@ -21,7 +21,7 @@ module.exports = {
       },
 
       boxShadow: {
-        border: "0 0 0 1px rgba(0, 0, 0, 0.3)",
+        border: "0 0 0 2px rgba(0, 0, 0, 0.3)",
       },
 
       colors: {

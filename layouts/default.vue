@@ -1,8 +1,6 @@
 <template>
   <div>
-    <header
-      class="fixed z-40 w-full pointer-coarse:bottom-16 pointer-fine:top-0"
-    >
+    <div class="fixed z-40 w-full pointer-coarse:bottom-8 pointer-fine:top-0">
       <nav
         class="mx-auto flex max-w-screen-xl place-content-between items-center px-4 py-4"
       >
@@ -14,7 +12,7 @@
             :key="item.name"
             :to="item.href"
             :class="{
-              'relative inline-flex items-center px-4 py-2 text-sm font-medium shadow-border hover:z-30 hover:shadow-orange-500 focus:z-20 focus:shadow-orange-500 focus:outline-none': true,
+              'relative inline-flex items-center px-4 py-2 pointer-coarse:px-6 pointer-coarse:py-3 text-sm font-medium shadow-border hover:z-30 hover:shadow-orange-500 focus:z-20 focus:shadow-orange-500 focus:outline-none': true,
               'z-10 bg-neutral-100/80 text-neutral-900 shadow-orange-500 dark:bg-neutral-900/90 dark:text-neutral-50 dark:shadow-orange-600':
                 item.href === $route.path,
               'bg-neutral-300/40 shadow-gray-400/60 dark:bg-neutral-800/80 dark:text-white':
@@ -40,12 +38,12 @@
           </button>
         </div>
       </nav>
-    </header>
+    </div>
 
     <slot />
 
     <footer
-      class="border-t-2 border-red-cray-200 bg-white dark:border-mirage-of-violets-700 dark:bg-whitewashed-fence-900"
+      class="border-t-2 border-red-cray-200 bg-neutral-100 dark:border-mirage-of-violets-700 dark:bg-neutral-900 pointer-coarse:pb-20"
     >
       <div
         class="mx-auto max-w-7xl py-12 px-4 sm:px-6 md:flex md:items-center md:justify-between lg:px-8"

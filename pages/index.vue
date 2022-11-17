@@ -10,10 +10,10 @@
     />
 
     <div
-      class="mx-auto grid h-full w-full max-w-screen-xl flex-row items-center border-l-[1px] border-r-[1px] border-red-cray-200 bg-neutral-400/10 px-4 dark:border-mirage-of-violets-700/40 dark:bg-neutral-800/10"
+      class="mx-auto grid h-full w-full max-w-screen-xl flex-row items-center xl:border-l-2 xl:border-r-2 border-red-cray-200 bg-neutral-400/10 px-4 px-4 py-4 dark:border-mirage-of-violets-700/40 dark:bg-neutral-800/10"
     >
       <div class="mx-auto max-w-screen-xl py-20">
-        <div class="text-black dark:text-white">
+        <header class="text-black dark:text-white">
           <h1
             class="text-xl font-bold leading-tight sm:text-3xl md:text-4xl lg:text-6xl"
           >
@@ -26,15 +26,34 @@
             and I’m a Site Reliability Engineer.
           </h1>
 
-          <h2 class="pt-6 text-sm sm:text-xl lg:text-2xl">
+          <h2 class="pt-6 text-base sm:text-xl lg:text-2xl">
             And Elixir programmer.<br class="lg:hidden" />
             And front-end web developer.<br class="lg:hidden" />
             And all around nerd.
           </h2>
-        </div>
+
+          <p class="mt-4 -ml-2">
+            <span
+              class="inline-flex items-center rounded-full bg-red-100 px-3 py-0.5 text-sm font-bold text-red-900 dark:bg-red-900 dark:text-red-100"
+            >
+              <svg
+                class="-ml-1 mr-1.5 h-2 w-2 text-red-400/75"
+                fill="currentColor"
+                viewBox="0 0 8 8"
+              >
+                <circle cx="4" cy="4" r="3" />
+              </svg>
+              Unavailable For Work
+            </span>
+          </p>
+        </header>
       </div>
     </div>
   </div>
 </template>
 
-<script></script>
+<script setup lang="ts">
+useHead({
+  title: "About Blake Kostner",
+});
+</script>
