@@ -1,14 +1,14 @@
 <template>
   <div>
     <div
-      class="content-stretch relative z-0 grid min-h-[40vh] items-stretch justify-items-stretch overflow-hidden border-b-2 border-red-cray-200 bg-whitewashed-fence-100 dark:border-mirage-of-violets-700 dark:bg-whitewashed-fence-900"
+      class="content-stretch border-red-cray-200 bg-whitewashed-fence-100 dark:border-mirage-of-violets-700 dark:bg-whitewashed-fence-900 relative z-0 grid min-h-[40vh] items-stretch justify-items-stretch overflow-hidden border-b-2"
     >
       <div
-        class="absolute top-0 left-[-25vmax] -z-10 h-[100vmax] w-[140vmax] rounded-full bg-red-cray-100 blur-[200vmax] dark:bg-red-cray-900"
+        class="bg-red-cray-100 dark:bg-red-cray-900 absolute top-0 left-[-25vmax] -z-10 h-[100vmax] w-[140vmax] rounded-full blur-[200vmax]"
       />
 
       <div
-        class="absolute bottom-0 right-[-35vmax] -z-10 h-[100vmax] w-[120vmax] rounded-full bg-mirage-of-violets-200/75 blur-[256px] dark:bg-mirage-of-violets-900/50"
+        class="bg-mirage-of-violets-200/75 dark:bg-mirage-of-violets-900/50 absolute bottom-0 right-[-35vmax] -z-10 h-[100vmax] w-[120vmax] rounded-full blur-[256px]"
       />
 
       <div
@@ -61,7 +61,7 @@
           </h2>
 
           <time
-            class="relative z-10 order-first mb-3 flex items-center text-sm text-mirage-of-violets-500 dark:text-mirage-of-violets-600"
+            class="text-mirage-of-violets-500 dark:text-mirage-of-violets-600 relative z-10 order-first mb-3 flex items-center text-sm"
             :datetime="reading.createdAt"
           >
             {{ humanDate(reading.createdAt) }}
@@ -75,7 +75,7 @@
 
           <div
             aria-hidden="true"
-            class="relative z-10 mt-4 flex items-center text-sm font-medium text-red-cray-500"
+            class="text-red-cray-500 relative z-10 mt-4 flex items-center text-sm font-medium"
           >
             Read article
             <ChevronRightIcon

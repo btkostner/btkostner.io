@@ -1,4 +1,7 @@
-module.exports = {
+import tailwindTouch from "tailwindcss-touch";
+import tailwindTypography from "@tailwindcss/typography";
+
+export default {
   content: [
     `components/**/*.{vue,js}`,
     `layouts/**/*.vue`,
@@ -12,7 +15,7 @@ module.exports = {
 
   darkMode: "class",
 
-  plugins: [require("@tailwindcss/typography"), require("tailwindcss-touch")()],
+  plugins: [tailwindTouch(), tailwindTypography],
 
   theme: {
     extend: {

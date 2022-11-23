@@ -1,16 +1,16 @@
 <template>
   <div
-    class="content-stretch relative z-0 grid min-h-[90vh] items-stretch justify-items-stretch overflow-hidden bg-whitewashed-fence-100 dark:bg-whitewashed-fence-900"
+    class="content-stretch bg-whitewashed-fence-100 dark:bg-whitewashed-fence-900 relative z-0 grid min-h-[90vh] items-stretch justify-items-stretch overflow-hidden"
   >
     <div
-      class="absolute top-[-100vmax] left-[-100vmax] -z-10 h-[200vmax] w-[200vmax] rounded-full bg-red-cray-100 blur-[200vmax] dark:bg-red-cray-900"
+      class="bg-red-cray-100 dark:bg-red-cray-900 absolute top-[-100vmax] left-[-100vmax] -z-10 h-[200vmax] w-[200vmax] rounded-full blur-[200vmax]"
     />
     <div
-      class="absolute bottom-[-120vmax] right-[-120vmax] -z-10 h-[200vmax] w-[200vmax] rounded-full bg-mirage-of-violets-200 blur-[200vmax] dark:bg-mirage-of-violets-900"
+      class="bg-mirage-of-violets-200 dark:bg-mirage-of-violets-900 absolute bottom-[-120vmax] right-[-120vmax] -z-10 h-[200vmax] w-[200vmax] rounded-full blur-[200vmax]"
     />
 
     <div
-      class="mx-auto grid h-full w-full max-w-screen-xl flex-row items-center border-red-cray-200 bg-neutral-400/10 px-4 px-4 py-4 dark:border-mirage-of-violets-700/40 dark:bg-neutral-800/10 xl:border-l-2 xl:border-r-2"
+      class="border-red-cray-200 dark:border-mirage-of-violets-700/40 mx-auto grid h-full w-full max-w-screen-xl flex-row items-center bg-neutral-400/10 px-4 px-4 py-4 dark:bg-neutral-800/10 xl:border-l-2 xl:border-r-2"
     >
       <div class="mx-auto max-w-screen-xl py-20">
         <header class="text-black dark:text-white">
@@ -20,7 +20,7 @@
             Hi!<br />
             My name is
             <span
-              class="relative z-10 ml-2 inline-block text-white before:absolute before:-top-0 before:-left-2 before:-bottom-0 before:-right-2 before:-z-10 before:block before:bg-red-cray-400 dark:text-white dark:before:bg-red-cray-500"
+              class="before:bg-red-cray-400 dark:before:bg-red-cray-500 relative z-10 ml-2 inline-block text-white before:absolute before:-top-0 before:-left-2 before:-bottom-0 before:-right-2 before:-z-10 before:block dark:text-white"
               >Blake Kostner</span
             ><br />
             and I’m a Site Reliability Engineer.

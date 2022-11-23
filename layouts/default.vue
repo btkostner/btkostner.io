@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="fixed z-40 w-full pointer-coarse:bottom-8 pointer-fine:top-0">
+    <div class="pointer-coarse:bottom-8 pointer-fine:top-0 fixed z-40 w-full">
       <nav
         class="mx-auto flex max-w-screen-xl place-content-between items-center px-4 py-4"
       >
@@ -12,7 +12,7 @@
             :key="item.name"
             :to="item.href"
             :class="{
-              'relative inline-flex items-center px-4 py-2 text-sm font-medium shadow-border hover:z-30 hover:shadow-orange-500 focus:z-20 focus:shadow-orange-500 focus:outline-none pointer-coarse:px-6 pointer-coarse:py-3': true,
+              'shadow-border pointer-coarse:px-6 pointer-coarse:py-3 relative inline-flex items-center px-4 py-2 text-sm font-medium hover:z-30 hover:shadow-orange-500 focus:z-20 focus:shadow-orange-500 focus:outline-none': true,
               'z-10 bg-neutral-100/80 text-neutral-900 shadow-orange-500 dark:bg-neutral-900/90 dark:text-neutral-50 dark:shadow-orange-600':
                 item.href === $route.path,
               'bg-neutral-300/40 shadow-gray-400/60 dark:bg-neutral-800/80 dark:text-white':
@@ -29,7 +29,7 @@
           class="inline-flex space-x-[1px] rounded-full backdrop-blur-lg backdrop-brightness-200"
         >
           <button
-            class="relative z-10 inline-flex items-center rounded-full bg-neutral-300/40 px-4 py-2 text-sm font-medium text-neutral-900 shadow-border shadow-gray-400/60 hover:z-30 hover:shadow-orange-500 focus:z-20 focus:shadow-orange-500 focus:outline-none dark:bg-neutral-800/80 dark:text-white"
+            class="shadow-border relative z-10 inline-flex items-center rounded-full bg-neutral-300/40 px-4 py-2 text-sm font-medium text-neutral-900 shadow-gray-400/60 hover:z-30 hover:shadow-orange-500 focus:z-20 focus:shadow-orange-500 focus:outline-none dark:bg-neutral-800/80 dark:text-white"
             @click="toggleAppearanceDark"
           >
             <SunIcon v-show="!isAppearanceDark" class="w-5" />
@@ -43,7 +43,7 @@
     <slot />
 
     <footer
-      class="border-t-2 border-red-cray-200 bg-neutral-100 pointer-coarse:pb-20 dark:border-mirage-of-violets-700 dark:bg-neutral-900"
+      class="border-red-cray-200 pointer-coarse:pb-20 dark:border-mirage-of-violets-700 border-t-2 bg-neutral-100 dark:bg-neutral-900"
     >
       <div
         class="mx-auto max-w-7xl py-12 px-4 sm:px-6 md:flex md:items-center md:justify-between lg:px-8"
