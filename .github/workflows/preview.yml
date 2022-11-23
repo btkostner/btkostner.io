@@ -13,8 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     environment:
-      name: Production
-      url: https://btkostner.io
+      name: Preview
 
     steps:
       - name: Checkout
@@ -36,13 +35,10 @@ jobs:
       - name: Install (Npm)
         if: steps.cache.outputs.cache-hit != 'true'
         run: npm ci --prefer-offline --no-audit --no-fund
-        env:
-          FONTAWESOME_NPM_AUTH_TOKEN: ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}
 
       - name: Build
         run: npm run build
         env:
-          FONTAWESOME_NPM_AUTH_TOKEN: ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}
           NITRO_PRESET: cloudflare
 
       - name: Publish

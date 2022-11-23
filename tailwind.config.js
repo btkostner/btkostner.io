@@ -1,169 +1,83 @@
-const colors = require('tailwindcss/colors')
-const defaultTheme = require('tailwindcss/defaultTheme')
-
 module.exports = {
-  mode: 'jit',
-  darkMode: 'class',
-
-  plugins: [
-    require('@tailwindcss/aspect-ratio'),
-    require('@tailwindcss/typography')
+  content: [
+    `components/**/*.{vue,js}`,
+    `layouts/**/*.vue`,
+    `pages/**/*.vue`,
+    `composables/**/*.{js,ts}`,
+    `plugins/**/*.{js,ts}`,
+    `App.{js,ts,vue}`,
+    `app.{js,ts,vue}`,
+    "nuxt.config.ts",
   ],
 
-  purge: {
-    options: {
-      safelist: [
-        'dark-mode',
-        /fa.*/,
-        /svg.*/
-      ]
-    }
-  },
+  darkMode: "class",
+
+  plugins: [require("@tailwindcss/typography"), require("tailwindcss-touch")()],
 
   theme: {
-    darkSelector: '.dark-mode',
-
-    colors: {
-      transparent: 'transparent',
-      current: 'currentColor',
-
-      black: colors.black,
-      white: colors.white,
-      gray: colors.trueGray,
-      red: colors.red,
-      orange: colors.orange,
-    },
-
-    fontFamily: {
-      sans: [
-        'Inter',
-        ...defaultTheme.fontFamily.sans
-      ],
-
-      display: [
-        'Inter',
-        'Raleway',
-        ...defaultTheme.fontFamily.sans
-      ],
-
-      body: [
-        '"Noto Serif"',
-        '"Droid Serif"',
-        ...defaultTheme.fontFamily.serif
-      ]
-    },
-
     extend: {
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+      },
+
+      boxShadow: {
+        border: "0 0 0 2px rgba(0, 0, 0, 0.3)",
+      },
+
+      colors: {
+        "mirage-of-violets": {
+          100: "#E7E0E6",
+          200: "#D1C1CE",
+          300: "#BDA3B7",
+          400: "#AA85A1",
+          500: "#99668E",
+          600: "#8A457C",
+          700: "#7B1E6B",
+          800: "#55144A",
+          900: "#320C2B",
+        },
+        "whitewashed-fence": {
+          100: "#E5E1DB",
+          200: "#CAC5BE",
+          300: "#AEAAA3",
+          400: "#949089",
+          500: "#7A7670",
+          600: "#605D59",
+          700: "#484642",
+          800: "#31302D",
+          900: "#1C1B1A",
+        },
+        "red-cray": {
+          100: "#F7DCD8",
+          200: "#F1B9B0",
+          300: "#EB9484",
+          400: "#E66B4D",
+          500: "#C9502A",
+          600: "#A03F21",
+          700: "#783019",
+          800: "#532111",
+          900: "#30130A",
+        },
+      },
+
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            color: theme('colors.gray.900'),
-
-            fontFamily: theme('fontFamily.body').join(', '),
-
-            a: {
-              color: theme('colors.red.700'),
-              textDecorationThickness: '1px',
-
-              '&:hover': {
-                color: theme('colors.red.800')
-              }
-            },
-
-            h1: {
-              fontFamily: theme('fontFamily.display').join(', ')
-            },
-            h2: {
-              fontFamily: theme('fontFamily.display').join(', ')
-            },
-            h3: {
-              fontFamily: theme('fontFamily.display').join(', ')
-            },
-            h4: {
-              fontFamily: theme('fontFamily.display').join(', ')
-            },
-            h5: {
-              fontFamily: theme('fontFamily.display').join(', ')
-            },
-            h6: {
-              fontFamily: theme('fontFamily.display').join(', ')
-            }
-          }
-        },
-
-        dark: {
-          css: {
-            color: theme('colors.gray.300'),
-
-            '[class~="lead"]': {
-              color: theme('colors.gray.400')
-            },
-
-            a: {
-              color: theme('colors.red.500'),
-
-              '&:hover': {
-                color: theme('colors.red.400')
-              }
-            },
-
-            strong: {
-              color: theme('colors.gray.100')
-            },
-
-            'ul > li::before': {
-              backgroundColor: theme('colors.gray.700')
-            },
-
-            hr: {
-              borderColor: theme('colors.gray.800')
-            },
-
-            blockquote: {
-              color: theme('colors.gray.100'),
-              borderLeftColor: theme('colors.gray.800')
-            },
-
-            h1: {
-              color: theme('colors.gray.100')
-            },
-
-            h2: {
-              color: theme('colors.gray.100')
-            },
-
-            h3: {
-              color: theme('colors.gray.100')
-            },
-
-            h4: {
-              color: theme('colors.gray.100')
-            },
-
-            code: {
-              color: theme('colors.gray.100')
-            },
-
-            'a code': {
-              color: theme('colors.gray.100')
-            },
-
             pre: {
-              color: theme('colors.gray.800'),
-              backgroundColor: theme('colors.gray.200')
+              background: theme("colors.neutral.50"),
+              color: theme("colors.neutral.900"),
             },
-
-            thead: {
-              color: theme('colors.gray.100'),
-              borderBottomColor: theme('colors.gray.700')
-            },
-
-            'tbody tr': {
-              borderBottomColor: theme('colors.gray.800')
-            }
-          }
+          },
         },
-      })
-    }
-  }
-}
+        invert: {
+          css: {
+            pre: {
+              background: theme("colors.neutral.800"),
+              color: theme("colors.neutral.50"),
+            },
+          },
+        },
+      }),
+    },
+  },
+};

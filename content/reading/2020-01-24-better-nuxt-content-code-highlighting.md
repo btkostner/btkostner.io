@@ -1,25 +1,15 @@
 ---
-
 title: better nuxt content code highlighting
-
-authorName: Blake Kostner
-
-published: true
-createdAt: 2021-01-24T08:00:00.730Z
-
-twitterImage: /_public/social
-
 description: >
   TIL you can use shiki as the default highlighter for nuxt content. This gives
   you a better tokenizing than the default highlighter, and allows you to use VS
   Code themes for your website. Bonus points for hacking together a working dark
   mode!
-
 tags:
   - nuxt
-  - TIL
+  - til
   - tip
-
+createdAt: 2021-01-24T08:00:00.730Z
 ---
 
 ## TL;DR

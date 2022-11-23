@@ -1,0 +1,18 @@
+name = "btkostner.io development"
+type = "javascript"
+workers_dev = true
+route = ""
+zone_id = "cca30cda5e68149641236609d2e15383"
+compatibility_date = "2022-04-07"
+
+[site]
+bucket = ".output/public"
+entry-point = ".output"
+
+[build]
+command = ""
+upload.format = "service-worker"
+
+[env.production]
+name = "btkostner.io production"
+route = "btkostner.io/*"

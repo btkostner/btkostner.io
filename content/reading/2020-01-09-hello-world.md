@@ -1,24 +1,14 @@
 ---
-
 title: hello world!
-
-authorName: Blake Kostner
-
-published: true
-createdAt: 2021-01-09T08:00:00.730Z
-
-twitterImage: /_public/social
-
 description: >
   I'm starting a new personal site that includes a blog! I'm not a great writer,
   but hopefully my thoughts will be helpful, if not a little entertaining. This
   goes over a bit of what the backend.
-
 tags:
   - nuxt
   - small-talk
   - web-dev
-
+createdAt: 2021-01-09T08:00:00.730Z
 ---
 
 So, after 4 years I finally updated my personal site, and I decided to include
@@ -37,22 +27,20 @@ nuxt project. Each index page has a couple lines of javascript to lookup a list
 of posts:
 
 ```js
-const posts = await $content('blog')
-  .only(['title', 'description', 'slug', 'createdAt'])
+const posts = await $content("blog")
+  .only(["title", "description", "slug", "createdAt"])
   .where({ published: true })
-  .sortBy('createdAt', 'desc')
+  .sortBy("createdAt", "desc")
   .limit(10)
-  .fetch()
+  .fetch();
 ```
 
 And then everything in this blog is just a simple markdown file written like so:
 
 ```md
 ---
-
 title: Hello world!
 description: I'm starting a blog!
-
 ---
 
 So, after 4 years I finally updated my personal site,

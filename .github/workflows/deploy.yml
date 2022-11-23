@@ -1,5 +1,4 @@
 ---
-
 name: Deploy
 
 on:
@@ -12,8 +11,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  GitHub_Pages:
-    name: GitHub Pages
+  Publish:
+    name: Publish
     runs-on: ubuntu-latest
 
     environment:
@@ -28,7 +27,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           cache: npm
-          node-version: '16.13.0'
+          node-version: "16.13.0"
 
       - name: Cache
         id: cache
@@ -40,18 +39,15 @@ jobs:
       - name: Install (Npm)
         if: steps.cache.outputs.cache-hit != 'true'
         run: npm ci --prefer-offline --no-audit --no-fund
-        env:
-          FONTAWESOME_NPM_AUTH_TOKEN: ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}
 
       - name: Build
         run: npm run build
         env:
-          FONTAWESOME_NPM_AUTH_TOKEN: ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}
+          NITRO_PRESET: cloudflare
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Publish
+        uses: cloudflare/wrangler-action@2.0.0
         with:
-          cname: btkostner.io
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          keep_files: true
-          publish_dir: ./dist
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          accountId: ${{ secrets.CF_ACCOUNT_ID }}
+          environment: production
