@@ -8,8 +8,6 @@ tags:
   - github
   - til
   - web-dev
-authorName: Blake Kostner
-published: true
 createdAt: 2021-11-24T08:00:00.730Z
 ---
 

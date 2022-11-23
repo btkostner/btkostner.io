@@ -9,8 +9,6 @@ tags:
   - nuxt
   - til
   - tip
-authorName: Blake Kostner
-published: true
 createdAt: 2021-01-24T08:00:00.730Z
 ---
 

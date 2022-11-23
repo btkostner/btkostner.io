@@ -69,6 +69,14 @@ module.exports = {
             },
           },
         },
+        invert: {
+          css: {
+            pre: {
+              background: theme("colors.neutral.800"),
+              color: theme("colors.neutral.50"),
+            },
+          },
+        },
       }),
     },
   },

@@ -21,21 +21,21 @@ export default defineNuxtConfig({
   content: {
     highlight: {
       preload: [
-        'diff',
-        'json',
-        'js',
-        'ts',
-        'css',
-        'shell',
-        'html',
-        'md',
-        'yaml'
+        "diff",
+        "json",
+        "js",
+        "ts",
+        "css",
+        "shell",
+        "html",
+        "md",
+        "yaml",
       ],
 
       theme: {
-        default: 'github-light',
-        dark: 'github-dark',
-        light: 'github-light',
+        default: "github-light",
+        dark: "github-dark",
+        light: "github-light",
       },
     },
   },

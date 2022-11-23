@@ -25,6 +25,7 @@
     "nuxt": "^3.0.0",
     "prettier": "^2.7.1",
     "prettier-plugin-tailwindcss": "^0.1.13",
+    "sitemap": "^7.1.1",
     "tailwindcss-touch": "^1.0.1"
   },
   "dependencies": {

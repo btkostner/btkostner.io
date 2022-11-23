@@ -34,7 +34,7 @@
       v-slot="{ data: readings }"
       path="reading"
       :only="['title', 'description', '_path', 'createdAt', 'tags']"
-      :where="{ published: true, _type: 'markdown' }"
+      :where="{ _type: 'markdown' }"
       :sort="{ createdAt: -1 }"
     >
       <ul class="my-20 mx-auto max-w-3xl space-y-20 px-4 py-4">

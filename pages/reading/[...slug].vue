@@ -16,8 +16,12 @@
       >
         <div class="mx-auto max-w-screen-xl py-20">
           <header class="text-black dark:text-white">
+            <time class="block text-sm sm:text-base" :datetime="data.createdAt">
+              {{ humanDate(data.createdAt) }}
+            </time>
+
             <h1
-              class="text-xl font-bold leading-tight sm:text-3xl md:text-4xl lg:text-6xl"
+              class="pt-6 text-xl font-bold leading-tight sm:text-3xl md:text-4xl lg:text-6xl"
             >
               {{ data.title }}
             </h1>
@@ -26,7 +30,7 @@
       </div>
     </div>
 
-    <article class="my-20 px-4 mx-auto prose lg:prose-xl dark:prose-invert dark:prose-pre:bg-neutral-800 dark:prose-pre:text-neutral-50">
+    <article class="prose my-20 mx-auto px-4 dark:prose-invert lg:prose-xl">
       <ContentDoc :value="data" />
     </article>
   </div>
