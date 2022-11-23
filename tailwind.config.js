@@ -12,7 +12,7 @@ module.exports = {
 
   darkMode: "class",
 
-  plugins: [require("tailwindcss-touch")()],
+  plugins: [require("@tailwindcss/typography"), require("tailwindcss-touch")()],
 
   theme: {
     extend: {
@@ -59,6 +59,17 @@ module.exports = {
           900: "#30130A",
         },
       },
+
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            pre: {
+              background: theme("colors.neutral.50"),
+              color: theme("colors.neutral.900"),
+            },
+          },
+        },
+      }),
     },
   },
 };

@@ -3,14 +3,14 @@
     class="content-stretch relative z-0 grid min-h-[90vh] items-stretch justify-items-stretch overflow-hidden bg-whitewashed-fence-100 dark:bg-whitewashed-fence-900"
   >
     <div
-      class="absolute top-[-400px] left-[-400px] -z-10 h-[800px] w-[1000px] rounded-full bg-red-cray-100 blur-[256px] dark:bg-red-cray-900"
+      class="absolute top-[-100vmax] left-[-100vmax] -z-10 h-[200vmax] w-[200vmax] rounded-full bg-red-cray-100 blur-[200vmax] dark:bg-red-cray-900"
     />
     <div
-      class="absolute bottom-[-400px] right-[-400px] -z-10 h-[1000px] w-[800px] rounded-full bg-mirage-of-violets-200 blur-[256px] dark:bg-mirage-of-violets-900"
+      class="absolute bottom-[-120vmax] right-[-120vmax] -z-10 h-[200vmax] w-[200vmax] rounded-full bg-mirage-of-violets-200 blur-[200vmax] dark:bg-mirage-of-violets-900"
     />
 
     <div
-      class="mx-auto grid h-full w-full max-w-screen-xl flex-row items-center xl:border-l-2 xl:border-r-2 border-red-cray-200 bg-neutral-400/10 px-4 px-4 py-4 dark:border-mirage-of-violets-700/40 dark:bg-neutral-800/10"
+      class="mx-auto grid h-full w-full max-w-screen-xl flex-row items-center border-red-cray-200 bg-neutral-400/10 px-4 px-4 py-4 dark:border-mirage-of-violets-700/40 dark:bg-neutral-800/10 xl:border-l-2 xl:border-r-2"
     >
       <div class="mx-auto max-w-screen-xl py-20">
         <header class="text-black dark:text-white">

@@ -18,6 +18,28 @@ export default defineNuxtConfig({
     classSuffix: "",
   },
 
+  content: {
+    highlight: {
+      preload: [
+        'diff',
+        'json',
+        'js',
+        'ts',
+        'css',
+        'shell',
+        'html',
+        'md',
+        'yaml'
+      ],
+
+      theme: {
+        default: 'github-light',
+        dark: 'github-dark',
+        light: 'github-light',
+      },
+    },
+  },
+
   experimental: {
     writeEarlyHints: true,
   },
