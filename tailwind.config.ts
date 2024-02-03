@@ -62,6 +62,7 @@ export default {
           css: {
             pre: {
               backgroundColor: "var(--sand-2)",
+              color: "var(--sand-11)",
             },
           },
         },

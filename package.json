@@ -3,6 +3,9 @@
   "description": "Blake Kostner personal website",
   "version": "5.0.0",
   "private": true,
+  "engines": {
+    "node": "^20.11.0"
+  },
   "scripts": {
     "start": "nuxt dev",
     "build": "nuxt build",
