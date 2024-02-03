@@ -10,7 +10,7 @@ export default defineEventHandler(async (event) => {
     return sendRedirect(
       event,
       "https://mastodon.social/.well-known/webfinger?resource=acct:btkostner@mastodon.social",
-      307
+      307,
     );
   } else {
     return createError({ status: 404 });

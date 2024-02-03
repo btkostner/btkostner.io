@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="flex-1">
     <div
       class="content-stretch border-red-cray-200 bg-whitewashed-fence-100 dark:border-mirage-of-violets-700 dark:bg-whitewashed-fence-900 relative z-0 grid min-h-[40vh] items-stretch justify-items-stretch overflow-hidden border-b-2"
     >
@@ -19,11 +19,11 @@
             <h1
               class="text-xl font-bold leading-tight sm:text-3xl md:text-4xl lg:text-6xl"
             >
-              Readings By Blake.
+              Reading
             </h1>
 
             <h2 class="pt-6 text-base sm:text-xl lg:text-2xl">
-              I didn't write everything, but you should still read them.
+              Random text by an ADHD site reliability engineer
             </h2>
           </header>
         </div>

@@ -2,7 +2,7 @@ export default defineNuxtConfig({
   app: {
     head: {
       bodyAttrs: {
-        class: "min-h-screen bg-neutral-100 dark:bg-neutral-900",
+        class: "min-h-screen bg-neutral-50 dark:bg-stone-950",
       },
       htmlAttrs: {
         class: "min-h-screen",

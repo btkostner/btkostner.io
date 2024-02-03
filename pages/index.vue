@@ -1,6 +1,6 @@
 <template>
   <div
-    class="content-stretch bg-whitewashed-fence-100 dark:bg-whitewashed-fence-900 relative z-0 grid min-h-[90vh] items-stretch justify-items-stretch overflow-hidden"
+    class="flex-1 content-stretch bg-whitewashed-fence-100 dark:bg-whitewashed-fence-900 relative z-0 grid items-stretch justify-items-stretch overflow-hidden"
   >
     <div
       class="bg-red-cray-100 dark:bg-red-cray-900 absolute top-[-100vmax] left-[-100vmax] -z-10 h-[200vmax] w-[200vmax] rounded-full blur-[200vmax]"
@@ -10,7 +10,7 @@
     />
 
     <div
-      class="border-red-cray-200 dark:border-mirage-of-violets-700/40 mx-auto grid h-full w-full max-w-screen-xl flex-row items-center bg-neutral-400/10 px-4 px-4 py-4 dark:bg-neutral-800/10 xl:border-l-2 xl:border-r-2"
+      class="mx-auto grid h-full w-full max-w-screen-xl flex-row items-center px-4 px-4 py-4"
     >
       <div class="mx-auto max-w-screen-xl py-20">
         <header class="text-black dark:text-white">

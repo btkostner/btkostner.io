@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="min-h-screen justify-stretch flex flex-col">
     <div class="pointer-coarse:bottom-8 pointer-fine:top-0 fixed z-40 w-full">
       <nav
         class="mx-auto flex max-w-screen-xl place-content-between items-center px-4 py-4"
@@ -39,11 +39,10 @@
         </div>
       </nav>
     </div>
-
     <slot />
 
     <footer
-      class="border-red-cray-200 pointer-coarse:pb-20 dark:border-mirage-of-violets-700 border-t-2 bg-neutral-100 dark:bg-neutral-900"
+      class="flex-none border-red-cray-200 pointer-coarse:pb-20 dark:border-mirage-of-violets-700 border-t-2 bg-neutral-100 dark:bg-neutral-900"
     >
       <div
         class="mx-auto max-w-7xl py-12 px-4 sm:px-6 md:flex md:items-center md:justify-between lg:px-8"
