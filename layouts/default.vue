@@ -2,23 +2,21 @@
   <div class="min-h-screen justify-stretch flex flex-col">
     <div class="pointer-coarse:bottom-8 pointer-fine:top-0 fixed z-40 w-full">
       <nav
-        class="mx-auto flex max-w-screen-xl place-content-between items-center px-4 py-4"
+        class="mx-auto flex max-w-screen-xl place-content-between items-center px-4 py-4 text-sand-12"
       >
         <div
-          class="inline-flex space-x-[1px] rounded-full backdrop-blur-lg backdrop-brightness-200"
+          class="inline-flex space-x-1 rounded-full backdrop-blur-[2px] bg-sand-a2 p-1"
         >
           <NuxtLink
-            v-for="(item, idx) in navigation"
+            v-for="item in navigation"
             :key="item.name"
             :to="item.href"
             :class="{
-              'shadow-border pointer-coarse:px-6 pointer-coarse:py-3 relative inline-flex items-center px-4 py-2 text-sm font-medium hover:z-30 hover:shadow-orange-500 focus:z-20 focus:shadow-orange-500 focus:outline-none': true,
-              'z-10 bg-neutral-100/80 text-neutral-900 shadow-orange-500 dark:bg-neutral-900/90 dark:text-neutral-50 dark:shadow-orange-600':
-                item.href === $route.path,
-              'bg-neutral-300/40 shadow-gray-400/60 dark:bg-neutral-800/80 dark:text-white':
+              'pointer-coarse:px-6 pointer-coarse:py-3 relative inline-flex items-center px-4 py-2 text-sm font-medium rounded-full': true,
+              'bg-sand-3 hover:bg-sand-4 focus:bg-sand-4':
                 item.href !== $route.path,
-              'rounded-l-full': idx === 0,
-              'rounded-r-full': idx === navigation.length - 1,
+              'bg-sand-5 ring-2 ring-inset ring-orange-200 dark:ring-violet-700':
+                item.href === $route.path,
             }"
           >
             {{ item.name }}
@@ -26,10 +24,10 @@
         </div>
 
         <div
-          class="inline-flex space-x-[1px] rounded-full backdrop-blur-lg backdrop-brightness-200"
+          class="inline-flex space-x-1 rounded-full backdrop-blur-[2px] bg-sand-a2 p-1"
         >
           <button
-            class="shadow-border relative z-10 inline-flex items-center rounded-full bg-neutral-300/40 px-4 py-2 text-sm font-medium text-neutral-900 shadow-gray-400/60 hover:z-30 hover:shadow-orange-500 focus:z-20 focus:shadow-orange-500 focus:outline-none dark:bg-neutral-800/80 dark:text-white"
+            class="pointer-coarse:px-6 pointer-coarse:py-3 relative inline-flex items-center px-4 py-2 text-sm font-medium rounded-full bg-sand-3 hover:bg-sand-4 focus:bg-sand-4"
             @click="toggleAppearanceDark"
           >
             <SunIcon v-show="!isAppearanceDark" class="w-5" />
@@ -42,7 +40,7 @@
     <slot />
 
     <footer
-      class="flex-none border-red-cray-200 pointer-coarse:pb-20 dark:border-mirage-of-violets-700 border-t-2 bg-neutral-100 dark:bg-neutral-900"
+      class="flex-none border-orange-200 pointer-coarse:pb-20 dark:border-violet-700 border-t-2"
     >
       <div
         class="mx-auto max-w-7xl py-12 px-4 sm:px-6 md:flex md:items-center md:justify-between lg:px-8"
@@ -50,7 +48,7 @@
         <div class="flex justify-center space-x-6 md:order-2">
           <a
             href="https://github.com/btkostner"
-            class="text-neutral-500 hover:text-neutral-600 dark:text-neutral-400 dark:hover:text-neutral-300"
+            class="text-sand-11 hover:text-sand-12"
             target="_blank"
             rel="me noopener noreferrer"
           >
@@ -69,7 +67,7 @@
 
           <a
             href="https://mastodon.social/@btkostner"
-            class="text-neutral-500 hover:text-neutral-600 dark:text-neutral-400 dark:hover:text-neutral-300"
+            class="text-sand-11 hover:text-sand-12"
             target="_blank"
             rel="me noopener noreferrer"
           >
@@ -88,7 +86,7 @@
 
           <a
             href="https://steamcommunity.com/id/mkrar"
-            class="text-neutral-500 hover:text-neutral-600 dark:text-neutral-400 dark:hover:text-neutral-300"
+            class="text-sand-11 hover:text-sand-12"
             target="_blank"
             rel="me noopener noreferrer"
           >
@@ -107,7 +105,7 @@
 
           <a
             href="https://www.linkedin.com/in/btkostner/"
-            class="text-neutral-500 hover:text-neutral-600 dark:text-neutral-400 dark:hover:text-neutral-300"
+            class="text-sand-11 hover:text-sand-12"
             target="_blank"
             rel="me noopener noreferrer"
           >
@@ -126,9 +124,7 @@
         </div>
 
         <div class="mt-8 md:order-1 md:mt-0">
-          <p
-            class="text-center text-base text-neutral-500 dark:text-neutral-400"
-          >
+          <p class="text-center text-base text-sand-11">
             Made with love, magic, and drugs.
           </p>
         </div>

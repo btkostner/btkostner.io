@@ -1,12 +1,9 @@
 <template>
   <div
-    class="flex-1 content-stretch bg-whitewashed-fence-100 dark:bg-whitewashed-fence-900 relative z-0 grid items-stretch justify-items-stretch overflow-hidden"
+    class="flex-1 content-stretch relative z-0 grid items-stretch justify-items-stretch overflow-hidden"
   >
     <div
-      class="bg-red-cray-100 dark:bg-red-cray-900 absolute top-[-100vmax] left-[-100vmax] -z-10 h-[200vmax] w-[200vmax] rounded-full blur-[200vmax]"
-    />
-    <div
-      class="bg-mirage-of-violets-200 dark:bg-mirage-of-violets-900 absolute bottom-[-120vmax] right-[-120vmax] -z-10 h-[200vmax] w-[200vmax] rounded-full blur-[200vmax]"
+      class="absolute -z-10 left-0 right-0 top-0 h-96 bg-gradient-to-b from-orange-400 via-red-200 dark:from-violet-700 dark:via-fuchsia-950 to-sand-1 opacity-60"
     />
 
     <div
@@ -20,7 +17,7 @@
             Hi!<br />
             My name is
             <span
-              class="before:bg-red-cray-400 dark:before:bg-red-cray-500 relative z-10 ml-2 inline-block text-white before:absolute before:-top-0 before:-left-2 before:-bottom-0 before:-right-2 before:-z-10 before:block dark:text-white"
+              class="before:bg-orange-400 dark:before:bg-violet-600 relative z-10 ml-2 inline-block text-white before:absolute before:-top-0 before:left-2 before:-bottom-0 before:right-2 before:-z-10 before:block dark:text-white before:scale-110 before:rotate-[-2deg]"
               >Blake Kostner</span
             ><br />
             and I’m a Site Reliability Engineer.
@@ -34,10 +31,10 @@
 
           <p class="mt-4 -ml-2">
             <span
-              class="inline-flex items-center rounded-full bg-red-100 px-3 py-0.5 text-sm font-bold text-red-900 dark:bg-red-900 dark:text-red-100"
+              class="inline-flex items-center rounded-full bg-red-100 px-3 py-0.5 text-sm font-bold text-red-700 dark:bg-red-600/5 dark:text-red-400 dark:ring-1 dark:ring-inset dark:ring-red-400/20"
             >
               <svg
-                class="-ml-1 mr-1.5 h-2 w-2 text-red-400/75"
+                class="-ml-1 mr-1.5 h-3 w-3 fill-red-500 dark:fill-red-400"
                 fill="currentColor"
                 viewBox="0 0 8 8"
               >
