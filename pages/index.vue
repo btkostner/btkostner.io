@@ -53,4 +53,9 @@
 useHead({
   title: "About Blake Kostner",
 });
+
+defineOgImageComponent("Page", {
+  title: "Blake Kostner",
+  description: "I’m a Site Reliability Engineer.",
+});
 </script>

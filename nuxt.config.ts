@@ -44,5 +44,14 @@ export default defineNuxtConfig({
     writeEarlyHints: true,
   },
 
-  modules: ["@nuxt/content", "@nuxtjs/color-mode", "@nuxtjs/tailwindcss"],
+  modules: [
+    "@nuxt/content",
+    "@nuxtjs/color-mode",
+    "@nuxtjs/tailwindcss",
+    "nuxt-og-image",
+  ],
+
+  site: {
+    url: "https://btkostner.io",
+  },
 });
