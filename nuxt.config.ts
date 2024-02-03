@@ -4,9 +4,12 @@ export default defineNuxtConfig({
       bodyAttrs: {
         class: "min-h-screen bg-sand-1 text-sand-11",
       },
+      charset: "utf-8",
       htmlAttrs: {
         class: "min-h-screen",
+        lang: "en-US",
       },
+      viewport: "width=device-width, initial-scale=1",
     },
   },
 

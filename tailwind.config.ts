@@ -57,7 +57,7 @@ export default {
         },
       },
 
-      typography: ({ theme }) => ({
+      typography: () => ({
         DEFAULT: {
           css: {
             pre: {

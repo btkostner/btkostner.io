@@ -1,3 +1,5 @@
+<!-- This is a modified copy of the nuxt content component -->
+<!-- eslint-disable vue/no-multiple-template-root -->
 <template>
   <slot />
 </template>

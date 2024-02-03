@@ -1,3 +1,4 @@
+<!-- This is a modified copy of the nuxt content component -->
 <template>
   <ProseCode
     :code="code"
@@ -11,6 +12,7 @@
 </template>
 
 <script setup lang="ts">
+/* eslint-disable vue/no-reserved-props */
 defineProps({
   code: {
     type: String,

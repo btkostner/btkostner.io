@@ -52,9 +52,11 @@
 <script setup lang="ts">
 useHead({
   title: "About Blake Kostner",
+  description:
+    "Hi! My name is Blake Kostner and I’m a Site Reliability Engineer. And Elixir programmer. And front-end web developer. And all around nerd.",
 });
 
-defineOgImageComponent("Page", {
+defineOgImageComponent("PageImage", {
   title: "Blake Kostner",
   description: "I’m a Site Reliability Engineer.",
 });
