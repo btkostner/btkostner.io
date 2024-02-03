@@ -22,23 +22,24 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
-      - name: Install (Node)
-        uses: actions/setup-node@v2
+      - id: node
+        name: Install (Node)
+        uses: actions/setup-node@v4
         with:
           cache: npm
-          node-version: "16.13.0"
+          node-version-file: .tool-versions
 
-      - name: Cache
-        id: cache
+      - id: cache
+        name: Cache
         uses: actions/cache@v2
         with:
+          key: ${{ steps.node.outputs.node-version }}-${{ hashFiles('package-lock.json') }}
           path: node_modules
-          key: 16.13.0-${{ hashFiles('package-lock.json') }}
 
-      - name: Install (Npm)
-        if: steps.cache.outputs.cache-hit != 'true'
+      - if: steps.cache.outputs.cache-hit != 'true'
+        name: Install (Npm)
         run: npm ci --prefer-offline --no-audit --no-fund
 
       - name: Build
@@ -52,23 +53,24 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
-      - name: Install (Node)
-        uses: actions/setup-node@v2
+      - id: node
+        name: Install (Node)
+        uses: actions/setup-node@v4
         with:
           cache: npm
-          node-version: "16.13.0"
+          node-version-file: .tool-versions
 
-      - name: Cache
-        id: cache
+      - id: cache
+        name: Cache
         uses: actions/cache@v2
         with:
+          key: ${{ steps.node.outputs.node-version }}-${{ hashFiles('package-lock.json') }}
           path: node_modules
-          key: 16.13.0-${{ hashFiles('package-lock.json') }}
 
-      - name: Install (Npm)
-        if: steps.cache.outputs.cache-hit != 'true'
+      - if: steps.cache.outputs.cache-hit != 'true'
+        name: Install (Npm)
         run: npm ci --prefer-offline --no-audit --no-fund
 
       - name: Format
@@ -80,23 +82,24 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
-      - name: Install (Node)
-        uses: actions/setup-node@v2
+      - id: node
+        name: Install (Node)
+        uses: actions/setup-node@v4
         with:
           cache: npm
-          node-version: "16.13.0"
+          node-version-file: .tool-versions
 
-      - name: Cache
-        id: cache
+      - id: cache
+        name: Cache
         uses: actions/cache@v2
         with:
+          key: ${{ steps.node.outputs.node-version }}-${{ hashFiles('package-lock.json') }}
           path: node_modules
-          key: 16.13.0-${{ hashFiles('package-lock.json') }}
 
-      - name: Install (Npm)
-        if: steps.cache.outputs.cache-hit != 'true'
+      - if: steps.cache.outputs.cache-hit != 'true'
+        name: Install (Npm)
         run: npm ci --prefer-offline --no-audit --no-fund
 
       - name: Prepare
