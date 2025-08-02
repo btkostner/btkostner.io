@@ -14,9 +14,14 @@ command = ""
 
 [[d1_databases]]
 binding = "DB"
-database_name = "btkostner-io"
-database_id = "4e4650e3-2867-4dd3-8633-0b1a8ff7f1bd"
+database_name = "btkostner-io-development"
+database_id = "edce0d49-15a6-4d59-9e96-39ab9bc92d3f"
 
 [env.production]
 name = "btkostner-io-production"
 route = "btkostner.io/*"
+
+[[env.production.d1_databases]]
+binding = "DB"
+database_name = "btkostner-io-production"
+database_id = "be4b01b7-a1a7-486c-b182-6c37f3ad489b"
