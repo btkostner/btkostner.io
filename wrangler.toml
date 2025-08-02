@@ -1,13 +1,21 @@
 name = "btkostner-io-development"
-workers_dev = true
-compatibility_date = "2022-04-07"
-main = ".output/server/index.mjs"
 
-[site]
-bucket = ".output/public"
+compatibility_date = "2025-08-01"
+compatibility_flags = ["nodejs_compat", "no_nodejs_compat_v2"]
+main = ".output/server/index.mjs"
+workers_dev = true
+
+[assets]
+binding = "ASSETS"
+directory = ".output/public"
 
 [build]
 command = ""
+
+[[d1_databases]]
+binding = "DB"
+database_name = "btkostner-io"
+database_id = "4e4650e3-2867-4dd3-8633-0b1a8ff7f1bd"
 
 [env.production]
 name = "btkostner-io-production"

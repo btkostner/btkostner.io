@@ -5,7 +5,7 @@
   "private": true,
   "type": "module",
   "engines": {
-    "node": "^22.0.0"
+    "node": ">=22.0.0"
   },
   "scripts": {
     "start": "nuxt dev",
@@ -37,7 +37,8 @@
     "tailwindcss": "^4.1.11",
     "tailwindcss-touch": "^1.0.1",
     "vue": "^3.5.18",
-    "vue-router": "^4.5.1"
+    "vue-router": "^4.5.1",
+    "wrangler": "^4.27.0"
   },
   "overrides": {
     "vite": "npm:rolldown-vite@latest"
