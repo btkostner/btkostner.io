@@ -1,8 +1,8 @@
-@import "@radix-ui/colors/sand.css";
-@import "@radix-ui/colors/sand-dark.css";
-@import "@radix-ui/colors/sand-alpha.css";
-@import "@radix-ui/colors/sand-dark-alpha.css";
+@import "tailwindcss";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "@radix-ui/colors/sand.css" layer(base);
+@import "@radix-ui/colors/sand-dark.css" layer(base);
+@import "@radix-ui/colors/sand-alpha.css" layer(base);
+@import "@radix-ui/colors/sand-dark-alpha.css" layer(base);
+
+@config '../../../tailwind.config.ts';

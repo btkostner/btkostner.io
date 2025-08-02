@@ -2,7 +2,7 @@
   <div class="min-h-screen justify-stretch flex flex-col">
     <div class="pointer-coarse:bottom-8 pointer-fine:top-0 fixed z-40 w-full">
       <nav
-        class="mx-auto flex max-w-screen-xl place-content-between items-center px-4 py-4 text-sand-12"
+        class="mx-auto flex max-w-(--breakpoint-xl) place-content-between items-center px-4 py-4 text-sand-12"
       >
         <div
           class="inline-flex space-x-1 rounded-full backdrop-blur-[2px] bg-sand-a2 p-1"

@@ -1,3 +1,5 @@
+import tailwindcss from "@tailwindcss/vite";
+
 export default defineNuxtConfig({
   app: {
     head: {
@@ -16,6 +18,8 @@ export default defineNuxtConfig({
   build: {
     transpile: ["@heroicons/vue", "@headlessui/vue"],
   },
+
+  css: ["~/assets/css/tailwind.css"],
 
   colorMode: {
     classSuffix: "",
@@ -53,11 +57,22 @@ export default defineNuxtConfig({
     "@nuxt/content",
     "@nuxt/eslint",
     "@nuxtjs/color-mode",
-    "@nuxtjs/tailwindcss",
+    // TODO: Support with Nuxt 4 and Tailwind 4 is not working yet.
+    // "@nuxtjs/tailwindcss",
     "nuxt-og-image",
   ],
 
   site: {
     url: "https://btkostner.io",
+  },
+
+  tailwindcss: {
+    experimental: {
+      tailwindcss4: true,
+    },
+  },
+
+  vite: {
+    plugins: [tailwindcss()],
   },
 });
