@@ -17,7 +17,7 @@
         class="border-l-4 border-yellow-400 bg-yellow-50 dark:bg-yellow-400/10 dark:border-yellow-500 p-4 my-8"
       >
         <div class="flex">
-          <div class="flex-shrink-0">
+          <div class="shrink-0">
             <ExclamationTriangleIcon
               class="h-5 w-5 text-yellow-400 dark:text-yellow-500"
               aria-hidden="true"
@@ -33,7 +33,7 @@
       </div>
 
       <div class="text-pretty prose dark:prose-invert">
-        <ContentDoc :value="data" />
+        <ContentRenderer :value="data" />
       </div>
     </article>
   </div>
@@ -44,7 +44,7 @@ import { ExclamationTriangleIcon } from "@heroicons/vue/20/solid";
 
 const { path } = useRoute();
 const { data } = await useAsyncData(`content-${path}`, () => {
-  return queryContent().where({ _path: path }).findOne();
+  return queryCollection("reading").path(path).first();
 });
 
 if (data?.value?.title == null) {

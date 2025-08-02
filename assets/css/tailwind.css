@@ -1,8 +1,0 @@
-@import "@radix-ui/colors/sand.css";
-@import "@radix-ui/colors/sand-dark.css";
-@import "@radix-ui/colors/sand-alpha.css";
-@import "@radix-ui/colors/sand-dark-alpha.css";
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;

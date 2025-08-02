@@ -1,12 +1,10 @@
 import { SitemapStream, streamToPromise } from "sitemap";
 
-import { serverQueryContent } from "#content/server";
-
 export default defineEventHandler(async (event) => {
-  const docs = await serverQueryContent(event)
-    .where({ _type: "markdown" })
-    .sort({ createdAt: -1 })
-    .find();
+  const docs = await queryCollection(event, "reading")
+    .select("path", "createdAt")
+    .order("createdAt", "DESC")
+    .all();
 
   const sitemap = new SitemapStream({
     hostname: "https://btkostner.io",
@@ -14,7 +12,7 @@ export default defineEventHandler(async (event) => {
 
   for (const doc of docs) {
     sitemap.write({
-      url: doc._path,
+      url: doc.path,
       changefreq: "monthly",
     });
   }
