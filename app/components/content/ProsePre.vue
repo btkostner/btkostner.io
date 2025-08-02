@@ -12,7 +12,6 @@
 </template>
 
 <script setup lang="ts">
-/* eslint-disable vue/no-reserved-props */
 defineProps({
   code: {
     type: String,

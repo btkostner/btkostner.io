@@ -21,6 +21,8 @@ export default defineNuxtConfig({
     classSuffix: "",
   },
 
+  compatibilityDate: "2025-07-15",
+
   content: {
     highlight: {
       preload: [
@@ -49,6 +51,7 @@ export default defineNuxtConfig({
 
   modules: [
     "@nuxt/content",
+    "@nuxt/eslint",
     "@nuxtjs/color-mode",
     "@nuxtjs/tailwindcss",
     "nuxt-og-image",

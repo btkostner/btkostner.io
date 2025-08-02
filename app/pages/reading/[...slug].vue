@@ -33,7 +33,7 @@
       </div>
 
       <div class="text-pretty prose dark:prose-invert">
-        <ContentDoc :value="data" />
+        <ContentRenderer :value="data" />
       </div>
     </article>
   </div>
@@ -44,7 +44,7 @@ import { ExclamationTriangleIcon } from "@heroicons/vue/20/solid";
 
 const { path } = useRoute();
 const { data } = await useAsyncData(`content-${path}`, () => {
-  return queryContent().where({ _path: path }).findOne();
+  return queryCollection("reading").path(path).first();
 });
 
 if (data?.value?.title == null) {
