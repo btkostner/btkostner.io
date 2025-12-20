@@ -31,6 +31,7 @@
     "eslint": "^9.39.2",
     "nuxt": "^4.2.2",
     "nuxt-og-image": "^5.1.13",
+    "nuxt-studio": "^1.0.0-beta.1",
     "prettier": "^3.7.4",
     "prettier-plugin-tailwindcss": "^0.7.2",
     "sitemap": "^9.0.0",

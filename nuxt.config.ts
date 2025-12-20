@@ -60,10 +60,22 @@ export default defineNuxtConfig({
     // TODO: Support with Nuxt 4 and Tailwind 4 is not working yet.
     // "@nuxtjs/tailwindcss",
     "nuxt-og-image",
+    "nuxt-studio",
   ],
 
   site: {
     url: "https://btkostner.io",
+  },
+
+  studio: {
+    route: "/edit",
+
+    repository: {
+      provider: "github",
+      owner: "btkostner",
+      repo: "btkostner.io",
+      branch: "main",
+    },
   },
 
   tailwindcss: {
