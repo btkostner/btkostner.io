@@ -9,9 +9,9 @@ tags:
   - reusable
 ---
 
-I realized I haven't made a new post in forever, so I figured I'd leave a little tidbit to keep things rolling. This is the reusable Github action I use for my Elixir projects, as well as what I've incorporated into the CI/CD pipeline at [Hiive](https://hiive.com).
+I realized I haven't written a new post in a while, so I wanted to share a small but useful piece of infrastructure I lean on a lot: the reusable GitHub Action I use for my Elixir projects. This is also the foundation of the CI/CD pipeline we use at [Hiive](https://hiive.com).
 
-## TL;DR:
+## TL;DR
 
 ```yaml [build-elixir-app.yaml]
 name: Build Elixir App
@@ -190,11 +190,11 @@ runs:
       working-directory: ${{ inputs.working-directory }}
 ```
 
-I think the input variables give a pretty good idea of what's going on here, but I'll break it down in some more detail below.
+The input variables already give a decent overview of what the action does, but I’ll walk through the important bits below.
 
-## Using
+## Using the action
 
-Using this action is pretty simple. Most of the inputs can be left off, leaving your workflows pretty small:
+Using this action is intentionally simple. Most inputs can be omitted, which keeps your workflows short and focused:
 
 ```yaml [ci.yaml]
 jobs:
@@ -213,16 +213,42 @@ jobs:
         run: mix docs
 ```
 
+By default, the action:
+
+- Installs Elixir and Erlang/OTP (using either explicit versions or `.tool-versions`)
+- Restores and populates dependency and build caches
+- Installs Hex/Rebar
+- Compiles your dependencies and app
+
+You can selectively turn pieces off via inputs like `compile-dependencies`, `compile-elixir`, or `setup-elixir` when jobs need a lighter setup.
+
 ## Caching
 
-One of the first things you'll notice is the `cache-name`. By default, this takes the Github job name. When you use this action, all of the caches will have this name suffixed to the end, but also allow restoring from any other cache name. This allows you to have unique dependencies or built files per job, all still cached and with little thrashing but at the expense of more cache space being used.
+The first thing you’ll probably notice is the `cache-name` input. By default, this uses the GitHub job name. That value is suffixed onto all cache keys, but the action also allows restoring from other cache names.
 
-Secondly, we have a `build-cache-hit` and `dependencies-cache-hit` output for later use.
+This gives you:
 
-And lastly, in the case of the job ever being re-ran, we retrieve the cache, then delete the cached files, and force a clean slate. This means after the job is done, it will save the whole cache a-new.
+- **Per-job isolation** – different jobs (e.g. tests, lint, dialyzer) can have their own dependency and build caches, which matters when tools compile with different options.
+- **Cross-job reuse** – restore keys still allow you to fall back to more general caches, reducing cold starts while keeping thrashing low. The tradeoff is higher total cache usage.
 
-I've found this extremely helpful for developers to reduce flakes, or at least make it easier for them to rerun and fix it themselves.
+The action also exposes two helpful outputs:
+
+- `build-cache-hit`
+- `dependencies-cache-hit`
+
+You can wire these into later steps to, for example, skip expensive work on a warm cache hit.
+
+Finally, when a job is re-run, the action takes a "clean slate" approach: it restores the cache, explicitly cleans compiled artifacts and dependencies, and only then rebuilds and saves a fresh cache. That keeps reruns more deterministic and helps reduce flaky behavior tied to stale build artifacts.
+
+In practice, this has made it much easier for developers to re-run failed jobs and debug them without fighting mysterious cache issues.
 
 ## Versioning
 
-This action pulls as much version data as it can from the `.tool-versions` file. If you are not using [mise](https://mise.jdx.dev/) already, I'd highly recommend you should. Otherwise, using a `.tool-versions` file to manage all of your language versions is a huge win.
+For versions, the action leans on your `.tool-versions` file whenever possible. If you’re not already using [mise](https://mise.jdx.dev/), I highly recommend it. Even without mise, keeping a `.tool-versions` file as the single source of truth for language versions is a big win.
+
+The action will:
+
+- Read `elixir` and `erlang` versions from `.tool-versions` if explicit inputs aren’t provided.
+- Export the exact resolved `elixir-version` and `otp-version` as outputs, so downstream jobs can log or act on the precise versions in use.
+
+That keeps GitHub Actions, local development, and other environments in sync, and avoids the usual "works on my machine" version drift or version bump PRs that touch 30 different files.
