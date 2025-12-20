@@ -45,6 +45,8 @@ jobs:
         run: npm run build
         env:
           NITRO_PRESET: cloudflare_module
+          STUDIO_GITHUB_CLIENT_ID: ${{ secrets.STUDIO_GITHUB_CLIENT_ID }}
+          STUDIO_GITHUB_CLIENT_SECRET: ${{ secrets.STUDIO_GITHUB_CLIENT_SECRET }}
 
       - name: Publish
         uses: cloudflare/wrangler-action@v3
