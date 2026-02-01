@@ -38,7 +38,7 @@
     "tailwindcss": "^4.1.18",
     "tailwindcss-touch": "^1.0.1",
     "vue": "^3.5.26",
-    "vue-router": "^4.6.4",
+    "vue-router": "^5.0.1",
     "wrangler": "^4.59.1"
   },
   "overrides": {
