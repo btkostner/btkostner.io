@@ -29,7 +29,7 @@
     "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.1.18",
     "eslint": "^9.39.2",
-    "nuxt": "^4.2.2",
+    "nuxt": "^4.3.0",
     "nuxt-og-image": "^5.1.13",
     "nuxt-studio": "^1.0.0-beta.1",
     "prettier": "^3.7.4",
